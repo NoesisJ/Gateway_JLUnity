@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+#app {
+  user-select: none;
+  shape-outside: margin-box;
+}
+
+:root {
+  --header-height: 3rem;
+
+  --p-inputtext-background: #f3f4f6;
+
+  --material-red: #e91d63;
+  --material-red-dark: #b00020;
+  --material-green: #60af20;
+  --material-blue: #0495ee;
+  --material-yellow: #ff9f05;
+  --material-bg-dark: #1f1f1f;
+  --material-bg-light: #303030;
+  --material-item-header: #404040;
+  --material-item-bg: #353535;
+  --material-item-bg-hover: #282828;
+  --material-item-bg-selected: #282828;
+  --material-item-bg-selected-hover: #171717;
+  --material-item-border: #41413e;
+
+  --col-sat-1: hsl(216, 50%, 45%);
+}
+
+body {
+  overflow: hidden;
+  user-select: none;
+  cursor: default;
+}
+
+@layer utilities {
+  @keyframes slidein {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animate-slidein {
+    animation: slidein 0.3s ease-out;
+  }
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  height: 12px;
+  width: 7px;
+  background: color-mix(in srgb, var(--material-red-dark) 5%, transparent);
+}
+.custom-scrollbar::-webkit-scrollbar-corner {
+  background: #000;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--material-red-dark);
+  -webkit-border-radius: 1ex;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+}
