@@ -3,13 +3,13 @@
     :class="[
       'header-layout h-24 z-10 w-full flex fixed left-0 justify-between items-center px-8 transition-all duration-500',
       activeSection === 0
-        ? 'bg-gradient-to-b from-black/50 to-black/0 text-white'
+        ? 'bg-gradient-to-b from-black/35 to-black/0 text-white'
         : 'bg-white text-black',
       headerVisible ? 'top-0' : '-top-24',
     ]"
   >
     <div class="logo-container flex items-center">
-      <img src="../assets/imgs/jlulogo-removebg-preview.png" alt="logo" class="h-20" />
+      <img src="../assets/imgs/jlulogo-removebg-preview.png" alt="logo" class="h-20 pl-12" />
     </div>
     <div class="menu-container flex space-x-12 text-xl font-medium pr-32">
       <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">吉大概况</div>

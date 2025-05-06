@@ -21,7 +21,7 @@
             <div class="slide-content-wrapper relative flex h-full">
               <!-- 左侧渐变遮罩 -->
               <div
-                class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/5 to-transparent w-2/3"
+                class="absolute inset-0 bg-gradient-to-r from-black/15 via-black/5 to-transparent w-2/3"
               ></div>
 
               <!-- 文本内容 -->
