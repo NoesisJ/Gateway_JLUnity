@@ -6,6 +6,6 @@
 </template>
 
 <script lang="ts" setup>
-import HeaderLayout from './headerLayout.vue'
-import ContentLayout from './contentLayout.vue'
+import HeaderLayout from './HeaderLayout.vue'
+import ContentLayout from './ContentLayout.vue'
 </script>
