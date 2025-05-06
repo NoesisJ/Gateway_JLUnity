@@ -17,12 +17,26 @@
             class="carousel-slide w-full h-full flex-shrink-0 bg-cover bg-center"
             :style="{ backgroundImage: `url(${slide.image})` }"
           >
-            <div class="slide-content text-white flex flex-col h-full pt-48 pl-32">
-              <h1 class="text-5xl font-bold mb-6">{{ slide.title }}</h1>
-              <p class="text-2xl max-w-2xl">{{ slide.description }}</p>
+            <!-- 改进文本容器 - 添加左侧渐变背景确保可读性 -->
+            <div class="slide-content-wrapper relative flex h-full">
+              <!-- 左侧渐变遮罩 -->
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-black/30 via-black/5 to-transparent w-2/3"
+              ></div>
+
+              <!-- 文本内容 -->
+              <div class="slide-content text-white flex flex-col h-full pt-48 pl-32 z-10 relative">
+                <h1 class="text-5xl font-bold mb-6 drop-shadow-lg">{{ slide.title }}</h1>
+                <p class="text-2xl max-w-2xl drop-shadow-md">{{ slide.description }}</p>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- 底部渐变黑色区域 -->
+        <div
+          class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"
+        ></div>
 
         <!-- 轮播图控制按钮 - 数字导航 (右下角) -->
         <div class="carousel-controls absolute bottom-8 right-8 flex items-center">
@@ -104,7 +118,10 @@ import { ref, onMounted } from 'vue'
 import { useSectionStore } from '../stores/sectionStore'
 
 // 导入图片资源
-import jlu1 from '../assets/imgs/jlu1.jpg'
+import jluSchool from '../assets/imgs/jlu1.jpg'
+import jluFlower from '../assets/imgs/jlu-flower.jpg'
+import jluCinema from '../assets/imgs/jlu-cinema.jpg'
+import jluClassroom from '../assets/imgs/jlu-classroom.jpg'
 
 interface Slide {
   image: string
@@ -120,19 +137,24 @@ interface Feature {
 // 轮播图数据
 const slides = ref<Slide[]>([
   {
-    image: jlu1,
+    image: jluSchool,
     title: '吉林大学',
     description: '探索知识的殿堂，开启未来的征程',
   },
   {
-    image: jlu1,
+    image: jluClassroom,
     title: '学术精神',
     description: '百年学府，薪火相传',
   },
   {
-    image: jlu1,
+    image: jluFlower,
     title: '美丽校园',
     description: '四季如画，静待君来',
+  },
+  {
+    image: jluCinema,
+    title: '校园生活',
+    description: '丰富多彩的校园生活，让你体验不一样的大学生活',
   },
 ])
 
