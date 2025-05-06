@@ -16,7 +16,9 @@
       <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">校园导览</div>
       <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">学术资源</div>
       <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">校园生活</div>
-      <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">四季美景</div>
+      <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">
+        <router-link to="/scenery">四季美景</router-link>
+      </div>
       <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">吉大周边</div>
     </div>
     <div class="icon-container flex space-x-8 pr-8">
@@ -43,8 +45,8 @@ const headerVisible = computed(() => sectionStore.headerVisible)
 </script>
 
 <style scoped>
-/* 平滑过渡动画 */
+/* hideHeader动画 */
 .header-layout {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 </style>

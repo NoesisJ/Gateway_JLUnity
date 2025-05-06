@@ -17,39 +17,45 @@
             class="carousel-slide w-full h-full flex-shrink-0 bg-cover bg-center"
             :style="{ backgroundImage: `url(${slide.image})` }"
           >
-            <div class="slide-content text-white p-16 flex flex-col h-full pt-36">
+            <div class="slide-content text-white flex flex-col h-full pt-48 pl-32">
               <h1 class="text-5xl font-bold mb-6">{{ slide.title }}</h1>
               <p class="text-2xl max-w-2xl">{{ slide.description }}</p>
             </div>
           </div>
         </div>
 
-        <!-- 轮播图控制按钮 -->
-        <div
-          class="carousel-controls absolute bottom-8 left-0 right-0 flex justify-center space-x-4"
-        >
-          <div
-            v-for="(_, index) in slides"
-            :key="index"
-            class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50 cursor-pointer"
-            :class="{ 'opacity-100': currentSlide === index }"
-            @click="goToSlide(index)"
-          ></div>
+        <!-- 轮播图控制按钮 - 数字导航 (右下角) -->
+        <div class="carousel-controls absolute bottom-8 right-8 flex items-center">
+          <div class="flex items-center">
+            <div
+              v-for="(_, index) in slides"
+              :key="index"
+              :class="[
+                'carousel-number text-white text-xl cursor-pointer transition-all duration-300 relative',
+                {
+                  'font-bold scale-125': currentSlide === index,
+                  'opacity-60': currentSlide !== index,
+                },
+              ]"
+              :style="{
+                marginRight:
+                  currentSlide === index && index < slides.length - 1 ? '4rem' : '0.25rem',
+                marginLeft: index === 0 ? '0' : '2rem',
+              }"
+              @click="goToSlide(index)"
+            >
+              {{ index + 1 }}
+              <!-- 只在当前数字和下一个数字之间显示线 -->
+              <div
+                v-if="currentSlide === index && index < slides.length - 1"
+                class="active-line h-px bg-white absolute right-[-4.35rem] top-1/2"
+              ></div>
+            </div>
+          </div>
+          <div class="arrow-icon text-white ml-1">
+            <i class="pi pi-arrow-right text-sm pl-4"></i>
+          </div>
         </div>
-
-        <!-- 上一张/下一张按钮 -->
-        <button
-          class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-opacity-20 hover:bg-opacity-40 transition-all p-3 rounded-full shadow-lg"
-          @click="prevSlide"
-        >
-          <i class="pi pi-chevron-left text-white text-xl"></i>
-        </button>
-        <button
-          class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-opacity-20 hover:bg-opacity-40 transition-all p-3 rounded-full shadow-lg"
-          @click="nextSlide"
-        >
-          <i class="pi pi-chevron-right text-white text-xl"></i>
-        </button>
 
         <!-- 向下滚动指示器 -->
         <div
@@ -88,6 +94,8 @@
         </div>
       </div>
     </div>
+
+    <!-- 第三部分内容 -->
   </div>
 </template>
 
@@ -177,10 +185,6 @@ const currentSlide = ref(0)
 
 function nextSlide() {
   currentSlide.value = (currentSlide.value + 1) % slides.value.length
-}
-
-function prevSlide() {
-  currentSlide.value = (currentSlide.value - 1 + slides.value.length) % slides.value.length
 }
 
 function goToSlide(index: number) {
@@ -310,5 +314,45 @@ onMounted(() => {
 .scroll-up-indicator:hover {
   transform: translateX(-50%) scale(1.2);
   transition: transform 0.2s;
+}
+
+/* 数字导航样式 */
+.carousel-number {
+  position: relative;
+  z-index: 10;
+}
+
+.carousel-number:hover {
+  opacity: 1;
+}
+
+/* 激活的数字样式 */
+.carousel-number.scale-125 {
+  opacity: 1;
+}
+
+/* 数字之间的连接线动画 */
+.active-line {
+  animation: expandLine 0.5s ease-out forwards;
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 4rem; /* 匹配style属性中的宽度 */
+  }
+}
+
+/* 箭头图标悬停效果 */
+.arrow-icon {
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.arrow-icon:hover {
+  opacity: 1;
+  transform: translateX(3px);
 }
 </style>
