@@ -25,9 +25,17 @@
               ></div>
 
               <!-- 文本内容 -->
-              <div class="slide-content text-white flex flex-col h-full pt-48 pl-32 z-10 relative">
-                <h1 class="text-5xl font-bold mb-6 drop-shadow-lg">{{ slide.title }}</h1>
-                <p class="text-2xl max-w-2xl drop-shadow-md">{{ slide.description }}</p>
+              <div
+                class="slide-content text-white flex flex-col h-full pt-24 sm:pt-32 md:pt-48 pl-6 sm:pl-16 md:pl-32 z-10 relative"
+              >
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-6 drop-shadow-lg">
+                  {{ slide.title }}
+                </h1>
+                <p
+                  class="text-lg sm:text-xl md:text-2xl max-w-full sm:max-w-xl md:max-w-2xl drop-shadow-md"
+                >
+                  {{ slide.description }}
+                </p>
               </div>
             </div>
           </div>
@@ -35,26 +43,27 @@
 
         <!-- 底部渐变黑色区域 -->
         <div
-          class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"
+          class="absolute bottom-0 left-0 w-full h-20 sm:h-24 md:h-32 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"
         ></div>
 
         <!-- 轮播图控制按钮 - 数字导航 (右下角) -->
-        <div class="carousel-controls absolute bottom-8 right-8 flex items-center">
+        <div
+          class="carousel-controls absolute bottom-4 sm:bottom-6 md:bottom-8 right-4 sm:right-6 md:right-8 flex items-center"
+        >
           <div class="flex items-center">
             <div
               v-for="(_, index) in slides"
               :key="index"
               :class="[
-                'carousel-number text-white text-xl cursor-pointer transition-all duration-300 relative',
+                'carousel-number text-white text-base sm:text-lg md:text-xl cursor-pointer transition-all duration-300 relative',
                 {
                   'font-bold scale-125': currentSlide === index,
                   'opacity-60': currentSlide !== index,
                 },
               ]"
               :style="{
-                marginRight:
-                  currentSlide === index && index < slides.length - 1 ? '4rem' : '0.25rem',
-                marginLeft: index === 0 ? '0' : '2rem',
+                marginRight: getMarginRight(index),
+                marginLeft: getMarginLeft(index),
               }"
               @click="goToSlide(index)"
             >
@@ -62,21 +71,63 @@
               <!-- 只在当前数字和下一个数字之间显示线 -->
               <div
                 v-if="currentSlide === index && index < slides.length - 1"
-                class="active-line h-px bg-white absolute right-[-4.35rem] top-1/2"
+                class="active-line h-px bg-white absolute top-1/2"
+                :style="{
+                  right: getLineRight(),
+                  width: getLineWidth(),
+                }"
               ></div>
             </div>
           </div>
           <div class="arrow-icon text-white ml-1">
-            <i class="pi pi-arrow-right text-sm pl-4"></i>
+            <i class="pi pi-arrow-right text-xs sm:text-sm pl-2 sm:pl-4"></i>
           </div>
+        </div>
+
+        <!-- 右侧扩展按钮区域 -->
+        <div
+          class="extend-button-container absolute right-0 top-1/2 -translate-y-1/2 hidden sm:block"
+        >
+          <router-link to="/introduction">
+            <div
+              class="extend-button relative w-12 sm:w-14 md:w-16 lg:w-18 h-24 sm:h-28 md:h-32 lg:h-36 bg-[rgb(0,75,180)] rounded-l-full cursor-pointer group"
+            >
+              <div
+                class="explore-text absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+              >
+                <div
+                  class="flex flex-col items-center pl-2 sm:pl-3 text-base sm:text-lg md:text-xl"
+                >
+                  <span>探</span>
+                  <span>索</span>
+                  <span>吉</span>
+                  <span>大</span>
+                </div>
+              </div>
+            </div>
+          </router-link>
+        </div>
+
+        <!-- 移动端浮动按钮 -->
+        <div class="sm:hidden fixed right-0 top-1/2 -translate-y-1/2 z-20">
+          <router-link to="/introduction">
+            <div
+              class="w-10 h-20 rounded-l-full bg-[rgb(0,75,180)] text-white flex items-center justify-center shadow-lg"
+            >
+              <div class="flex flex-col items-center px-2">
+                <span class="text-xs mb-1">探</span>
+                <span class="text-xs mb-1">索</span>
+              </div>
+            </div>
+          </router-link>
         </div>
 
         <!-- 向下滚动指示器 -->
         <div
-          class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+          class="scroll-indicator absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer z-10"
           @click="scrollToContent"
         >
-          <i class="pi pi-chevron-down text-white text-2xl"></i>
+          <i class="pi pi-chevron-down text-white text-xl sm:text-2xl"></i>
         </div>
       </div>
     </div>
@@ -88,22 +139,26 @@
       :class="{ '-translate-y-full': activeSection === 1 }"
     >
       <div
-        class="scroll-up-indicator absolute top-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+        class="scroll-up-indicator absolute top-4 sm:top-6 md:top-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
         @click="scrollToCarousel"
       >
-        <i class="pi pi-chevron-up text-blue-600 text-2xl"></i>
+        <i class="pi pi-chevron-up text-blue-600 text-xl sm:text-2xl"></i>
       </div>
 
-      <div class="container mx-auto py-24 px-8">
-        <h2 class="text-4xl font-bold mb-12 text-center">校园风采</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="container mx-auto py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12 text-center">
+          校园风采
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           <div
             v-for="(feature, index) in features"
             :key="index"
-            class="feature-card p-6 bg-gray-50 rounded-lg shadow-md"
+            class="feature-card p-4 sm:p-5 md:p-6 bg-gray-50 rounded-lg shadow-md"
           >
-            <h3 class="text-2xl font-semibold mb-4">{{ feature.title }}</h3>
-            <p class="text-gray-700">{{ feature.description }}</p>
+            <h3 class="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 md:mb-4">
+              {{ feature.title }}
+            </h3>
+            <p class="text-sm sm:text-base text-gray-700">{{ feature.description }}</p>
           </div>
         </div>
       </div>
@@ -122,6 +177,49 @@ import jluSchool from '../assets/imgs/jlu1.jpg'
 import jluFlower from '../assets/imgs/jlu-flower.jpg'
 import jluCinema from '../assets/imgs/jlu-cinema.jpg'
 import jluClassroom from '../assets/imgs/jlu-classroom.jpg'
+
+// 屏幕尺寸响应值
+const screenWidth = ref(window.innerWidth)
+
+// 监听窗口大小变化
+onMounted(() => {
+  window.addEventListener('resize', () => {
+    screenWidth.value = window.innerWidth
+  })
+})
+
+// 动态计算间距
+const getMarginRight = (index: number) => {
+  if (currentSlide.value === index && index < slides.value.length - 1) {
+    if (screenWidth.value < 640) return '2rem'
+    if (screenWidth.value < 768) return '3rem'
+    return '4rem'
+  }
+  return '0.25rem'
+}
+
+const getMarginLeft = (index: number) => {
+  if (index === 0) return '0'
+  if (screenWidth.value < 640) return '1rem'
+  if (screenWidth.value < 768) return '1.5rem'
+  return '2rem'
+}
+
+// 获取连接线右侧位置
+const getLineRight = () => {
+  if (screenWidth.value < 640) return '-2.25rem' // 小屏幕
+  if (screenWidth.value < 768) return '-3.25rem' // 中等屏幕
+  if (screenWidth.value < 1024) return '-4.25rem' // 大屏幕
+  return '-4.5rem' // 超大屏幕
+}
+
+// 获取连接线宽度
+const getLineWidth = () => {
+  if (screenWidth.value < 640) return '2rem' // 小屏幕
+  if (screenWidth.value < 768) return '3rem' // 中等屏幕
+  if (screenWidth.value < 1024) return '4rem' // 大屏幕
+  return '4.25rem' // 超大屏幕，最大宽度为4.25rem
+}
 
 interface Slide {
   image: string
@@ -204,6 +302,21 @@ const features = ref<Feature[]>([
 
 // 轮播图逻辑
 const currentSlide = ref(0)
+let slideInterval: ReturnType<typeof setInterval> | null = null
+
+function startCarouselTimer() {
+  // 清除现有的定时器
+  if (slideInterval) {
+    clearInterval(slideInterval)
+  }
+
+  // 设置新的定时器
+  slideInterval = setInterval(() => {
+    if (activeSection.value === 0) {
+      nextSlide()
+    }
+  }, 6000)
+}
 
 function nextSlide() {
   currentSlide.value = (currentSlide.value + 1) % slides.value.length
@@ -211,6 +324,8 @@ function nextSlide() {
 
 function goToSlide(index: number) {
   currentSlide.value = index
+  // 点击切换时重置定时器
+  startCarouselTimer()
 }
 
 // 滚动视差相关
@@ -270,6 +385,8 @@ function scrollToCarousel() {
   sectionStore.setActiveSection(0)
   // 隐藏header
   sectionStore.hideHeader()
+  // 重置轮播图定时器
+  startCarouselTimer()
 
   setTimeout(() => {
     isScrolling.value = false
@@ -282,17 +399,12 @@ function scrollToCarousel() {
 onMounted(() => {
   // 确保初始状态正确
   sectionStore.setActiveSection(0)
-
-  // 设置自动轮播
-  const slideInterval = setInterval(() => {
-    if (activeSection.value === 0) {
-      nextSlide()
-    }
-  }, 5000)
+  // 启动轮播图定时器
+  startCarouselTimer()
 
   // 确保组件卸载时清除定时器
   return () => {
-    clearInterval(slideInterval)
+    if (slideInterval) clearInterval(slideInterval)
     if (scrollTimeout) clearTimeout(scrollTimeout)
   }
 })
@@ -355,15 +467,15 @@ onMounted(() => {
 
 /* 数字之间的连接线动画 */
 .active-line {
-  animation: expandLine 0.5s ease-out forwards;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
-@keyframes expandLine {
+@keyframes fadeIn {
   from {
-    width: 0;
+    opacity: 0;
   }
   to {
-    width: 4rem; /* 匹配style属性中的宽度 */
+    opacity: 1;
   }
 }
 

@@ -13,6 +13,15 @@ const router = createRouter({
       },
     },
     {
+      path: '/introduction',
+      name: 'introduction',
+      component: () => import('../views/IntroductionView.vue'),
+      meta: {
+        customTransition: true, // 标记此页面使用自定义过渡动画
+        hideHeader: true, // 标记此页面不显示header
+      },
+    },
+    {
       path: '/scenery',
       name: 'scenery',
       component: () => import('../views/SceneryView.vue'),
@@ -49,11 +58,13 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const sectionStore = useSectionStore()
 
-  // 如果离开首页或进入非首页
-  if (from.path === '/' || (to.path !== '/' && from.path !== to.path)) {
-    // 先隐藏header
-    sectionStore.hideHeader()
+  // 先隐藏header
+  sectionStore.hideHeader()
 
+  // 检查目标路由是否需要隐藏header
+  if (to.meta.hideHeader) {
+    // 如果需要隐藏header，不执行showHeader
+  } else {
     // 如果目标不是首页，设置为内容区样式（白色背景）
     if (to.path !== '/') {
       sectionStore.setActiveSection(1)
