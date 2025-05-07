@@ -22,6 +22,26 @@ const router = createRouter({
       name: 'academicresources',
       component: () => import('../views/AcademicResourcesView.vue'),
     },
+    {
+      path: '/scenery/spring',
+      name: 'spring',
+      component: () => import('../views/SpringView.vue'),
+    },
+    {
+      path: '/scenery/summer',
+      name: 'summer',
+      component: () => import('../views/SummerView.vue'),
+    },
+    {
+      path: '/scenery/autumn',
+      name: 'autumn',
+      component: () => import('../views/AutumnView.vue'),
+    },
+    {
+      path: '/scenery/winter',
+      name: 'winter',
+      component: () => import('../views/WinterView.vue'),
+    },
   ],
 })
 
