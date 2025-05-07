@@ -17,6 +17,11 @@ const router = createRouter({
       name: 'scenery',
       component: () => import('../views/SceneryView.vue'),
     },
+    {
+      path: '/academicresources',
+      name: 'academicresources',
+      component: () => import('../views/AcademicResourcesView.vue'),
+    },
   ],
 })
 
