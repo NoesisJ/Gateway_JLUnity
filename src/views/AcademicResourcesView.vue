@@ -7,9 +7,15 @@
     <main class="main-content">
       <section class="resource-section">
         <h2>图书馆资源</h2>
-        <p>吉林大学图书馆拥有丰富的馆藏资源，包括各类图书、期刊、电子数据库等，为全校师生的教学和科研活动提供有力支持。</p>
+        <p>
+          吉林大学图书馆拥有丰富的馆藏资源，包括各类图书、期刊、电子数据库等，为全校师生的教学和科研活动提供有力支持。
+        </p>
         <ul>
-          <li><a href="http://lib.jlu.edu.cn/" target="_blank" rel="noopener noreferrer">吉林大学图书馆官网</a></li>
+          <li>
+            <a href="http://lib.jlu.edu.cn/" target="_blank" rel="noopener noreferrer"
+              >吉林大学图书馆官网</a
+            >
+          </li>
           <li><a href="#" @click.prevent="navigateToResource('eresources')">电子资源导航</a></li>
           <li><a href="#" @click.prevent="navigateToResource('booksearch')">馆藏书目检索</a></li>
         </ul>
@@ -17,7 +23,9 @@
 
       <section class="resource-section">
         <h2>科研平台</h2>
-        <p>学校建设了多个国家级和省部级重点实验室、工程研究中心以及人文社科重点研究基地，为高水平科学研究提供重要平台。</p>
+        <p>
+          学校建设了多个国家级和省部级重点实验室、工程研究中心以及人文社科重点研究基地，为高水平科学研究提供重要平台。
+        </p>
         <div class="platform-grid">
           <div class="platform-item">
             <h3>国家重点实验室</h3>
@@ -49,7 +57,9 @@
 
       <section class="resource-section">
         <h2>学术交流与合作</h2>
-        <p>学校积极开展国内外学术交流与合作，定期举办学术会议、讲座，邀请知名学者来访，拓展师生学术视野。</p>
+        <p>
+          学校积极开展国内外学术交流与合作，定期举办学术会议、讲座，邀请知名学者来访，拓展师生学术视野。
+        </p>
         <button @click="viewUpcomingEvents">查看近期学术活动</button>
       </section>
     </main>
@@ -61,35 +71,36 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue'
 // 如果你需要路由跳转，可以导入 vue-router 的 useRouter
 // import { useRouter } from 'vue-router';
 
 // const router = useRouter(); // 初始化路由
 
-const currentYear = ref(new Date().getFullYear());
+const currentYear = ref(new Date().getFullYear())
 
-const navigateToResource = (resourceName: string) => { // 建议也给参数加上类型
+const navigateToResource = (resourceName: string) => {
+  // 建议也给参数加上类型
   // 在这里你可以根据 resourceName 实现具体的跳转逻辑
   // 例如，如果使用了 vue-router:
   // router.push({ name: resourceName });
-  alert(`导航到: ${resourceName}`); // 占位提示
-  console.log(`尝试导航到: ${resourceName}`);
-};
+  alert(`导航到: ${resourceName}`) // 占位提示
+  console.log(`尝试导航到: ${resourceName}`)
+}
 
 const viewResearchProjects = () => {
-  alert('查看科研项目详情');
+  alert('查看科研项目详情')
   // 实际项目中可能会跳转到新的页面或显示一个模态框
-};
+}
 
 const viewUpcomingEvents = () => {
-  alert('查看近期学术活动');
-};
+  alert('查看近期学术活动')
+}
 
 onMounted(() => {
   // 组件挂载后可以执行一些初始化操作
-  console.log('AcademicResourcesView.vue 组件已挂载');
-});
+  console.log('AcademicResourcesView.vue 组件已挂载')
+})
 </script>
 
 <style scoped>
@@ -97,7 +108,7 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* 确保至少占满整个视口高度 */
-  width: 100%;      /* 占满整个视口宽度 */
+  width: 100%; /* 占满整个视口宽度 */
   font-family: 'Arial', sans-serif;
   color: #333;
   background-color: #f4f7f6; /* 淡雅的背景色 */
