@@ -66,14 +66,14 @@
   position: relative; /* 为了伪元素覆盖层定位 */
   padding: 0; /* 移除之前的padding */
   margin: 0;  /* 移除之前的margin */
-  
+
   /* 设置背景图片 */
   background-image: url('src/assets/imgs/jlu-scenery.jpg'); /* 确保图片路径正确 */
   background-size: cover; /* 图片覆盖整个区域 */
   background-position: center center; /* 图片居中显示 */
   background-repeat: no-repeat; /* 图片不重复 */
   background-attachment: fixed; /* 背景图片固定，内容滚动时产生视差效果 */
-  
+
   display: flex; /* 使用flex布局使content-area能垂直居中（如果需要）或正常排列 */
   flex-direction: column; /* 内容垂直排列 */
   align-items: center; /* 水平居中content-area */
@@ -147,7 +147,7 @@
   flex-shrink: 1;
   flex-basis: calc(25% - 22.5px); /* (3 * 30px) / 4 = 22.5px (基于新gap) */
   min-width: 250px; /* 调整最小宽度，使其更大气 */
-  
+
   border-radius: 12px; /* 增大圆角 */
   text-align: center;
   transition: transform 0.35s ease-out, box-shadow 0.35s ease-out, background-color 0.3s ease-in-out;

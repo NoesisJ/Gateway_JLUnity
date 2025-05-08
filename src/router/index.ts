@@ -13,6 +13,15 @@ const router = createRouter({
       },
     },
     {
+      path: '/introduction',
+      name: 'introduction',
+      component: () => import('../views/IntroductionView.vue'),
+      meta: {
+        customTransition: true, // 标记此页面使用自定义过渡动画
+        hideHeader: true, // 标记此页面不显示header
+      },
+    },
+    {
       path: '/scenery',
       name: 'scenery',
       component: () => import('../views/SceneryView.vue'),
@@ -21,6 +30,59 @@ const router = createRouter({
       path: '/academicresources',
       name: 'academicresources',
       component: () => import('../views/AcademicResourcesView.vue'),
+    },
+    {
+      path: '/academicresources/library',
+      name: 'library',
+      component: () => import('../views/LibraryView.vue'),
+    },
+     {
+      path: '/academicresources/databases',
+      name: 'database-resources',
+      component: () => import('../views/DatabaseResourcesView.vue'),
+    },
+    {
+      path: '/academicresources/journals',
+      name: 'journal-resources',
+      component: () => import('../views/JournalResourcesView.vue'),
+    },
+    {
+      path: '/academicresources/national-key-labs',
+      name: 'national-key-labs',
+       // 使用懒加载
+      component: () => import('../views/NationalKeyLabsView.vue'),
+    },
+    {
+      path: '/academicresources/moe-key-labs',
+      name: 'moe-key-labs',
+       // 使用懒加载
+      component: () => import('../views/MoEKeyLabsView.vue'),
+    },
+    {
+      path: '/academicresources/provincial-ministerial-bases',
+      name: 'provincial-ministerial-bases',
+       // 使用懒加载
+      component: () => import('../views/ProvincialMinisterialBasesView.vue'),
+    },
+    {
+      path: '/academicresources/events',
+      name: 'upcoming-events',
+      component: () => import('../views/UpcomingEventsView.vue'),
+    },
+    {
+      path: '/academicresources/achievements',
+      name: 'research-achievements',
+      component: () => import('../views/ResearchAchievementsView.vue'),
+    },
+    {
+      path: '/academicresources/exchange',
+      name: 'academic-exchange',
+      component: () => import('../views/AcademicExchangeView.vue'), // 懒加载
+    },
+     {
+      path: '/academicresources/continuing-education',
+      name: 'continuing-education',
+      component: () => import('../views/ContinuingEducationView.vue'), // 懒加载
     },
     {
       path: '/scenery/spring',
@@ -49,11 +111,13 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const sectionStore = useSectionStore()
 
-  // 如果离开首页或进入非首页
-  if (from.path === '/' || (to.path !== '/' && from.path !== to.path)) {
-    // 先隐藏header
-    sectionStore.hideHeader()
+  // 先隐藏header
+  sectionStore.hideHeader()
 
+  // 检查目标路由是否需要隐藏header
+  if (to.meta.hideHeader) {
+    // 如果需要隐藏header，不执行showHeader
+  } else {
     // 如果目标不是首页，设置为内容区样式（白色背景）
     if (to.path !== '/') {
       sectionStore.setActiveSection(1)
