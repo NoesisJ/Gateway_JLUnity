@@ -6,13 +6,65 @@
         class="absolute inset-0 flex transition-transform"
         :style="{
           transform: `translateX(-${currentPage * 100}%)`,
-          transition: `transform ${transitionDuration}s ${transitionTiming} ${transitionDelay}s`,
+          transition: `transform ${transitionDuration}s ${transitionTiming}`,
         }"
       >
-        <!-- 四个不同颜色的页面 -->
-        <div class="page flex-shrink-0 w-full h-full bg-blue-500 flex items-center justify-center">
-          <h1 class="text-4xl text-white font-bold">吉林大学简介 - 第一页</h1>
+        <!-- 第一页 - 数据页 -->
+        <div class="page flex-shrink-0 w-full h-full flex">
+          <!-- 左侧区域 - 20%宽度 -->
+          <div
+            class="w-[20%] h-full bg-[#213d65] flex flex-col items-center justify-center text-white relative left-section-bg"
+          >
+            <div class="flex flex-col items-center">
+              <div class="text-5xl from-neutral-400 writing-vertical-lr mb-8">关于·吉大</div>
+            </div>
+            <div
+              class="writing-vertical-lr text-amber-50 absolute right-24"
+              style="letter-spacing: 0.5em"
+            >
+              求实创新，励志图强
+            </div>
+          </div>
+
+          <!-- 右侧区域 - 80%宽度 - 网格布局 -->
+          <div class="w-[80%] h-full grid grid-cols-6 grid-rows-4 right-section-bg">
+            <!-- 第一行 -->
+            <div class="bg-[#6780ad]/70 flex flex-col items-center justify-center text-white p-2">
+              <div class="text-2xl font-bold">1898</div>
+              <div class="text-sm">北大创办时间</div>
+            </div>
+            <div class="bg-[#4b6695]/70"></div>
+            <div class="bg-[#385284]/70"></div>
+            <div class="bg-[#445d8c]/70"></div>
+            <div class="bg-[#405a89]/70"></div>
+            <div class="bg-[#6780ad]/70"></div>
+
+            <!-- 第二行 -->
+            <div class="bg-[#385284]/70"></div>
+            <div class="bg-[#6780ad]/70"></div>
+            <div class="bg-[#445d8c]/70"></div>
+            <div class="bg-[#405a89]/70"></div>
+            <div class="bg-[#4b6695]/70"></div>
+            <div class="bg-[#385284]/70"></div>
+
+            <!-- 第三行 -->
+            <div class="bg-[#445d8c]/70"></div>
+            <div class="bg-[#385284]/70"></div>
+            <div class="bg-[#6780ad]/70"></div>
+            <div class="bg-[#4b6695]/70"></div>
+            <div class="bg-[#405a89]/70"></div>
+            <div class="bg-[#445d8c]/70"></div>
+
+            <!-- 第四行 -->
+            <div class="bg-[#405a89]/70"></div>
+            <div class="bg-[#445d8c]/70"></div>
+            <div class="bg-[#4b6695]/70"></div>
+            <div class="bg-[#385284]/70"></div>
+            <div class="bg-[#6780ad]/70"></div>
+            <div class="bg-[#405a89]/70"></div>
+          </div>
         </div>
+
         <div class="page flex-shrink-0 w-full h-full bg-green-500 flex items-center justify-center">
           <h1 class="text-4xl text-white font-bold">吉林大学简介 - 第二页</h1>
         </div>
@@ -173,16 +225,16 @@ import AnimationView from '../components/animationView.vue'
 const currentPage = ref(0)
 
 // 动画时间和缓动函数
-const transitionDuration = ref(0.4)
-const transitionTiming = ref('linear')
-const transitionDelay = ref(0.2)
+const transitionDuration = ref(0.8)
+const transitionTiming = ref('ease-out')
+const transitionDelay = ref(0)
 
 // 下一页
 const nextPage = () => {
   if (currentPage.value < 3) {
-    transitionDuration.value = 0.4
-    transitionTiming.value = 'linear'
-    transitionDelay.value = 0.2
+    transitionDuration.value = 0.8
+    transitionTiming.value = 'ease-out'
+    transitionDelay.value = 0
     currentPage.value++
   }
 }
@@ -196,13 +248,13 @@ const goToPage = (pageIndex: number) => {
 
   if (distance === 1) {
     // 相邻页面正常过渡
-    transitionDuration.value = 0.4
-    transitionTiming.value = 'linear'
-    transitionDelay.value = 0.2
+    transitionDuration.value = 0.8
+    transitionTiming.value = 'ease-out'
+    transitionDelay.value = 0
   } else {
     // 非相邻页面，先快速过渡中间页面
     transitionDuration.value = 0.1
-    transitionTiming.value = 'linear'
+    transitionTiming.value = 'ease-out'
     transitionDelay.value = 0
 
     // 先移动到中间页面
@@ -214,9 +266,9 @@ const goToPage = (pageIndex: number) => {
 
     // 然后延迟后移动到目标页面
     setTimeout(() => {
-      transitionDuration.value = 0.4
-      transitionTiming.value = 'linear'
-      transitionDelay.value = 0.2
+      transitionDuration.value = 0.8
+      transitionTiming.value = 'ease-out'
+      transitionDelay.value = 0
       currentPage.value = pageIndex
     }, 100)
 
@@ -231,3 +283,24 @@ onMounted(() => {
   document.body.classList.add('overflow-hidden')
 })
 </script>
+
+<style scoped>
+.writing-vertical-lr {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+.left-section-bg {
+  background-image: url('../assets/imgs/introductionView/jlu-introduction2.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.right-section-bg {
+  background-image: url('../assets/imgs/introductionView/jlu-introduction1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+</style>

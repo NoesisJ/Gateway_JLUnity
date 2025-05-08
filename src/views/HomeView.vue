@@ -173,10 +173,10 @@ import { ref, onMounted } from 'vue'
 import { useSectionStore } from '../stores/sectionStore'
 
 // 导入图片资源
-import jluSchool from '../assets/imgs/jlu1.jpg'
-import jluFlower from '../assets/imgs/jlu-flower.jpg'
-import jluCinema from '../assets/imgs/jlu-cinema.jpg'
-import jluClassroom from '../assets/imgs/jlu-classroom.jpg'
+import jluSchool from '../assets/imgs/homeView/jlu1.jpg'
+import jluFlower from '../assets/imgs/homeView/jlu-flower.jpg'
+import jluCinema from '../assets/imgs/homeView/jlu-cinema.jpg'
+import jluClassroom from '../assets/imgs/homeView/jlu-classroom.jpg'
 
 // 屏幕尺寸响应值
 const screenWidth = ref(window.innerWidth)
