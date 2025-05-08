@@ -25,33 +25,31 @@ const router = createRouter({
       path: '/scenery',
       name: 'scenery',
       component: () => import('../views/SceneryView.vue'),
-      children: [
-        {
-          path: '/spring',
-          name: 'spring',
-          component: () => import('../views/SpringView.vue'),
-        },
-        {
-          path: '/summer',
-          name: 'summer',
-          component: () => import('../views/SummerView.vue'),
-        },
-        {
-          path: '/autumn',
-          name: 'autumn',
-          component: () => import('../views/AutumnView.vue'),
-        },
-        {
-          path: '/winter',
-          name: 'winter',
-          component: () => import('../views/WinterView.vue'),
-        },
-      ],
     },
     {
       path: '/academicresources',
       name: 'academicresources',
       component: () => import('../views/AcademicResourcesView.vue'),
+    },
+    {
+      path: '/scenery/spring',
+      name: 'spring',
+      component: () => import('../views/SpringView.vue'),
+    },
+    {
+      path: '/scenery/summer',
+      name: 'summer',
+      component: () => import('../views/SummerView.vue'),
+    },
+    {
+      path: '/scenery/autumn',
+      name: 'autumn',
+      component: () => import('../views/AutumnView.vue'),
+    },
+    {
+      path: '/scenery/winter',
+      name: 'winter',
+      component: () => import('../views/WinterView.vue'),
     },
   ],
 })
