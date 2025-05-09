@@ -27,41 +27,210 @@
           </div>
 
           <!-- 右侧区域 - 80%宽度 - 网格布局 -->
-          <div class="w-[80%] h-full grid grid-cols-6 grid-rows-4 right-section-bg">
+          <div
+            class="w-[80%] h-full grid grid-cols-6 grid-rows-4 right-section-bg bg-[#446294] perspective-1000"
+          >
             <!-- 第一行 -->
-            <div class="bg-[#6780ad]/70 flex flex-col items-center justify-center text-white p-2">
-              <div class="text-2xl font-bold">1898</div>
-              <div class="text-sm">北大创办时间</div>
+            <div
+              :class="['grid-cell', 'grid-color-1', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 0ms"
+            ></div>
+            <div
+              :class="['grid-cell', 'grid-color-2', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 50ms"
+            ></div>
+            <div
+              :class="['grid-cell', 'grid-color-3', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 100ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">1946</div>
+                <div class="grid-cell-text">吉大创办时间</div>
+              </div>
             </div>
-            <div class="bg-[#4b6695]/70"></div>
-            <div class="bg-[#385284]/70"></div>
-            <div class="bg-[#445d8c]/70"></div>
-            <div class="bg-[#405a89]/70"></div>
-            <div class="bg-[#6780ad]/70"></div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-1-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 150ms"
+            ></div>
+            <div
+              :class="['grid-cell', 'grid-color-1', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 200ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">33</div>
+                <div class="grid-cell-text">近五年两院院士</div>
+              </div>
+            </div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-3-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 250ms"
+            ></div>
 
             <!-- 第二行 -->
-            <div class="bg-[#385284]/70"></div>
-            <div class="bg-[#6780ad]/70"></div>
-            <div class="bg-[#445d8c]/70"></div>
-            <div class="bg-[#405a89]/70"></div>
-            <div class="bg-[#4b6695]/70"></div>
-            <div class="bg-[#385284]/70"></div>
+            <div
+              :class="['grid-cell', 'grid-color-2', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 300ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">72152</div>
+                <div class="grid-cell-text">全日制学生</div>
+              </div>
+            </div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-1-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 350ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">16589</div>
+                <div class="grid-cell-text">教职工</div>
+              </div>
+            </div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-2-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 400ms"
+            ></div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-3-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 450ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">41949</div>
+                <div class="grid-cell-text">本科生</div>
+              </div>
+            </div>
+            <div
+              :class="['grid-cell', 'grid-color-2', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 500ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">32,492</div>
+                <div class="grid-cell-text">研究生</div>
+              </div>
+            </div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-1-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 550ms"
+            ></div>
 
             <!-- 第三行 -->
-            <div class="bg-[#445d8c]/70"></div>
-            <div class="bg-[#385284]/70"></div>
-            <div class="bg-[#6780ad]/70"></div>
-            <div class="bg-[#4b6695]/70"></div>
-            <div class="bg-[#405a89]/70"></div>
-            <div class="bg-[#445d8c]/70"></div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-3-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 600ms"
+            ></div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-2-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 650ms"
+            ></div>
+            <div
+              :class="['grid-cell', 'grid-color-1', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 700ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">139</div>
+                <div class="grid-cell-text">本科招生专业</div>
+              </div>
+            </div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-1-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 750ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">89</div>
+                <div class="grid-cell-text">国家一流课程</div>
+              </div>
+            </div>
+            <div
+              :class="['grid-cell', 'grid-color-3', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 800ms"
+            ></div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-2-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 850ms"
+            ></div>
 
             <!-- 第四行 -->
-            <div class="bg-[#405a89]/70"></div>
-            <div class="bg-[#445d8c]/70"></div>
-            <div class="bg-[#4b6695]/70"></div>
-            <div class="bg-[#385284]/70"></div>
-            <div class="bg-[#6780ad]/70"></div>
-            <div class="bg-[#405a89]/70"></div>
+            <div
+              :class="['grid-cell', 'grid-color-1', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 900ms"
+            ></div>
+            <div
+              :class="['grid-cell', 'grid-color-3', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 950ms"
+            ></div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-2-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 1000ms"
+            ></div>
+            <div
+              :class="[
+                'grid-cell',
+                'grid-color-3-light',
+                { 'animate-grid-rotate': currentPage === 0 },
+              ]"
+              style="animation-delay: 1050ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">858</div>
+                <div class="grid-cell-text">外国留学生</div>
+              </div>
+            </div>
+            <div
+              :class="['grid-cell', 'grid-color-1', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 1100ms"
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">821.8</div>
+                <div class="grid-cell-text">图书馆藏书(万册)</div>
+              </div>
+            </div>
+            <div
+              :class="['grid-cell', 'grid-color-2', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 1150ms"
+            ></div>
           </div>
         </div>
 
@@ -218,7 +387,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
 import AnimationView from '../components/animationView.vue'
 
 // 当前页面索引
@@ -228,6 +397,104 @@ const currentPage = ref(0)
 const transitionDuration = ref(0.8)
 const transitionTiming = ref('ease-out')
 const transitionDelay = ref(0)
+
+// 标记是否是从外部页面进入
+const isFromExternalPage = ref(true)
+
+// 存储文字旋转的定时器ID
+let textRotateTimer: number | null = null
+
+// 网格动画控制
+const resetGridAnimation = () => {
+  // 移除并重新添加动画类，以便重新触发动画
+  if (currentPage.value === 0) {
+    const gridCells = document.querySelectorAll('.grid-cell')
+    gridCells.forEach((cell) => {
+      cell.classList.remove('animate-grid-rotate')
+      setTimeout(() => {
+        cell.classList.add('animate-grid-rotate')
+      }, 50)
+    })
+  }
+}
+
+// 随机文字旋转动画
+const startRandomTextRotation = () => {
+  // 只有在第一页才启动文字旋转动画
+  if (currentPage.value !== 0) return
+
+  // 获取所有带有文字的格子
+  const cellsWithText = document.querySelectorAll('.grid-cell-content')
+  if (cellsWithText.length === 0) return
+
+  // 随机选择一个格子的文字
+  const randomIndex = Math.floor(Math.random() * cellsWithText.length)
+  const selectedCell = cellsWithText[randomIndex]
+
+  // 获取数字元素和文本元素
+  const numberElement = selectedCell.querySelector('.grid-cell-number')
+  const textElement = selectedCell.querySelector('.grid-cell-text')
+
+  if (numberElement) {
+    // 先移除可能存在的动画类，然后添加动画类
+    numberElement.classList.remove('animate-text-rotate')
+    // 使用setTimeout可以强制重新计算，确保动画重新播放
+    setTimeout(() => {
+      numberElement.classList.add('animate-text-rotate')
+    }, 10)
+  }
+
+  // 延迟500ms后旋转文本元素
+  if (textElement) {
+    textElement.classList.remove('animate-text-rotate')
+    setTimeout(() => {
+      textElement.classList.add('animate-text-rotate')
+    }, 500)
+  }
+}
+
+// 启动定时器，每6秒旋转一次
+const setupTextRotationTimer = () => {
+  // 清除可能存在的旧定时器
+  if (textRotateTimer !== null) {
+    clearInterval(textRotateTimer)
+  }
+
+  // 设置新定时器
+  textRotateTimer = setInterval(() => {
+    startRandomTextRotation()
+  }, 6000) as unknown as number
+
+  // 立即执行一次
+  startRandomTextRotation()
+}
+
+// 清除定时器
+const clearTextRotationTimer = () => {
+  if (textRotateTimer !== null) {
+    clearInterval(textRotateTimer)
+    textRotateTimer = null
+  }
+}
+
+// 监视页面变化
+watch(currentPage, (newValue, oldValue) => {
+  if (newValue === 0 && oldValue !== 0) {
+    // 仅当是在Introduction页面内部切换时触发动画
+    if (!isFromExternalPage.value) {
+      setTimeout(resetGridAnimation, 300)
+    }
+    // 切换到第一页时启动文字旋转定时器
+    setupTextRotationTimer()
+  } else if (newValue !== 0) {
+    // 离开第一页时清除定时器
+    clearTextRotationTimer()
+  }
+  // 一旦发生了页面切换，就不再是从外部页面进入的状态
+  if (isFromExternalPage.value) {
+    isFromExternalPage.value = false
+  }
+})
 
 // 下一页
 const nextPage = () => {
@@ -281,6 +548,21 @@ const goToPage = (pageIndex: number) => {
 onMounted(() => {
   // 确保页面加载后填满整个屏幕
   document.body.classList.add('overflow-hidden')
+
+  // 初始加载时不触发网格动画
+  // 设置一个标志，表示第一次加载页面不需要触发动画
+  isFromExternalPage.value = true
+
+  // 如果初始页面是第一页，启动文字旋转定时器
+  if (currentPage.value === 0) {
+    // 延迟一下启动，确保DOM已经加载完毕
+    setTimeout(setupTextRotationTimer, 1000)
+  }
+})
+
+onBeforeUnmount(() => {
+  // 组件卸载前清除定时器
+  clearTextRotationTimer()
 })
 </script>
 
