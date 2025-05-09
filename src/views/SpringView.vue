@@ -36,9 +36,9 @@
 
 <script setup lang="ts">
 // 使用 import 导入图片，确保构建工具能正确处理它们
-import springImage1 from '../assets/imgs/spring1.jpg';
-import springImage2 from '../assets/imgs/spring2.jpg';
-import springImage3 from '../assets/imgs/spring3.jpg';
+import springImage1 from '../assets/imgs/sceneryView/spring1.jpg';
+import springImage2 from '../assets/imgs/sceneryView/spring2.jpg';
+import springImage3 from '../assets/imgs/sceneryView/spring3.jpg';
 
 // 如果你想在 <style> 中动态使用 springHeroImage，可以将其暴露给 CSS 变量
 // import { ref, onMounted } from 'vue';
@@ -71,8 +71,7 @@ import springImage3 from '../assets/imgs/spring3.jpg';
   text-align: center;
   color: #fff;
 
-  /* 使用 @ 别名引用背景图片 */
-  background-image: url('../assets/imgs/spring0.jpg'); /* 确保图片路径和文件名正确 */
+  background-image: url('../assets/imgs/sceneryView/spring0.jpg'); /* 确保图片路径和文件名正确 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -11,17 +11,17 @@
       <article class="winter-description">
         <h2 class="section-title">体味吉大冬日风骨</h2>
 
-        <img src="../assets/imgs/winter1.jpg" alt="吉大冬日风光一" class="inline-season-image">
+        <img src="../assets/imgs/sceneryView/winter1.jpg" alt="吉大冬日风光一" class="inline-season-image">
         <p>
           北国的冬天，在吉林大学的校园里，自有其独特的魅力与风骨。一场场瑞雪如约而至，将整个校园细致地描绘成一幅素雅的水墨画。平日里熟悉的教学楼、道路、树木，此刻都披上了洁白的雪衣，显得格外宁静与庄严。踩在厚厚的雪地上，发出“咯吱咯吱”的声响，是冬日校园里最动听的乐章之一。
         </p>
 
-        <img src="../assets/imgs/winter2.jpg" alt="吉大冬日风光二" class="inline-season-image">
+        <img src="../assets/imgs/sceneryView/winter2.jpg" alt="吉大冬日风光二" class="inline-season-image">
         <p>
           虽然室外寒风凛冽，但图书馆、自习室里却是一片灯火通明、书香弥漫的温暖景象。学子们不畏严寒，在知识的海洋中遨游，为梦想而刻苦钻研。窗外是冰天雪地，窗内是勤奋的身影，构成一幅动静相宜的求学图。偶尔，阳光穿透云层，洒在雪地上，反射出耀眼的光芒，此时的校园更显晶莹剔透，美不胜收。枝头的雾凇、屋檐下的冰棱，都是大自然馈赠给吉大冬日的精致艺术品。
         </p>
 
-        <img src="../assets/imgs/winter3.jpg" alt="吉大冬日风光三" class="inline-season-image">
+        <img src="../assets/imgs/sceneryView/winter3.jpg" alt="吉大冬日风光三" class="inline-season-image">
         <p>
           吉大的冬天，是对意志的磨砺，也是对心灵的净化。在这片银装素裹的土地上，学子们感受着北国独有的凛冽与壮美，也孕育着对春天的无限向往与对未来的坚定信念。它不仅仅是寒冷的代名词，更是一种沉静的力量，一种在逆境中依然坚守与奋进的精神象征。
         </p>
@@ -59,7 +59,7 @@
   color: #fff;
 
   /* 使用 winter0.jpg 作为背景图片，通过相对路径 */
-  background-image: url('../assets/imgs/winter0.jpg'); /* 相对路径 */
+  background-image: url('../assets/imgs/sceneryView/winter0.jpg'); /* 相对路径 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

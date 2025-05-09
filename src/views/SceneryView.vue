@@ -68,7 +68,7 @@
   margin: 0;  /* 移除之前的margin */
 
   /* 设置背景图片 */
-  background-image: url('src/assets/imgs/jlu-scenery.jpg'); /* 确保图片路径正确 */
+  background-image: url('src/assets/imgs/sceneryView/jlu-scenery.jpg'); /* 确保图片路径正确 */
   background-size: cover; /* 图片覆盖整个区域 */
   background-position: center center; /* 图片居中显示 */
   background-repeat: no-repeat; /* 图片不重复 */

@@ -11,17 +11,17 @@
       <article class="summer-description">
         <h2 class="section-title">感受吉大夏日激情</h2>
 
-        <img src="../assets/imgs/summer1.jpg" alt="吉大夏日风光一" class="inline-season-image">
+        <img src="../assets/imgs/sceneryView/summer1.jpg" alt="吉大夏日风光一" class="inline-season-image">
         <p>
           当春日的温柔渐渐隐去，吉林大学便迎来了它一年中最为热烈奔放的季节——夏天。阳光毫无保留地洒满校园的每一个角落，树木枝繁叶茂，以前所未有的浓绿，为匆匆行走的师生撑起一片片浓密的绿荫。清晨，朝露在叶片上闪烁，傍晚，绚烂的晚霞映红天际，每一帧都是大自然馈赠的绝美画卷。图书馆的灯光与窗外的蝉鸣交织，构成夏日里独特的学习交响曲。
         </p>
 
-        <img src="../assets/imgs/summer2.jpg" alt="吉大夏日风光二" class="inline-season-image">
+        <img src="../assets/imgs/sceneryView/summer2.jpg" alt="吉大夏日风光二" class="inline-season-image">
         <p>
           校园内的道路两旁，白杨挺拔，梧桐伸展，它们的叶片在夏风中沙沙作响，仿佛在诉说着成长的故事。逸夫楼、鼎新楼等标志性建筑在夏日阳光下更显庄重。虽然暑气逼人，但校园的活力并未消减。无论是为学业奋战在实验室、图书馆的学子，还是在运动场上挥洒汗水的身影，都展现着吉大人特有的坚韧与热情。夏夜的校园也别有一番风味，三五好友漫步谈心，或是在操场上仰望星空，都是难忘的青春记忆。
         </p>
 
-        <img src="../assets/imgs/summer3.jpg" alt="吉大夏日风光三" class="inline-season-image">
+        <img src="../assets/imgs/sceneryView/summer3.jpg" alt="吉大夏日风光三" class="inline-season-image">
         <p>
           吉大的夏天，是知识积累的沉淀期，也是青春能量的爆发期。浓密的绿荫下是静心思考的理想场所，而开放的学术氛围则鼓励着思想的碰撞与创新。偶有阵雨掠过，雨后的空气格外清新，校园也仿佛被洗涤一新，绿意更浓，生机更盛。这不仅是一个季节的更迭，更是一段充满挑战与机遇，挥洒汗水与收获喜悦的时光。
         </p>
@@ -59,7 +59,7 @@
   color: #fff;
 
   /* 使用 summer0.jpg 作为背景图片，通过相对路径 */
-  background-image: url('../assets/imgs/summer0.jpg'); /* Relative path */
+  background-image: url('../assets/imgs/sceneryView/summer0.jpg'); /* Relative path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
