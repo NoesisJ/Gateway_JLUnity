@@ -65,7 +65,7 @@
   min-height: 100vh; /* 确保至少占据整个视口高度 */
   position: relative; /* 为了伪元素覆盖层定位 */
   padding: 0; /* 移除之前的padding */
-  margin: 0;  /* 移除之前的margin */
+  margin: 0; /* 移除之前的margin */
 
   /* 设置背景图片 */
   background-image: url('src/assets/imgs/sceneryView/jlu-scenery.jpg'); /* 确保图片路径正确 */
@@ -121,18 +121,18 @@
 /* === 介绍区域样式 === */
 .intro-section {
   width: 100%;
-  max-width: 800px; 
+  max-width: 800px;
   text-align: center;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
   /* 新增：为介绍区域添加半透明挡板 */
   background-color: rgba(0, 0, 0, 0.25); /* 示例：25% 不透明度的黑色挡板，可以比标题的挡板略浅 */
   padding: 25px 30px; /* 为挡板增加内边距 */
   border-radius: 8px; /* 可选：圆角 */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 可选：轻微阴影 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 可选：轻微阴影 */
 }
 .intro-section p {
-  color: #f0f0f0; 
-  font-size: 1.2em; 
+  color: #f0f0f0;
+  font-size: 1.2em;
   line-height: 1.8;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.75);
   margin-bottom: 0; /* 因为挡板有了padding，段落本身的margin可以调整 */
@@ -155,7 +155,10 @@
 
   border-radius: 12px; /* 增大圆角 */
   text-align: center;
-  transition: transform 0.35s ease-out, box-shadow 0.35s ease-out, background-color 0.3s ease-in-out;
+  transition:
+    transform 0.35s ease-out,
+    box-shadow 0.35s ease-out,
+    background-color 0.3s ease-in-out;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* 调整初始阴影 */
   display: flex;
   overflow: hidden;
@@ -164,21 +167,45 @@
 
 /* 为每个季节卡片设置独特的初始背景色和文字颜色 */
 /* 注意：这些颜色可能需要根据背景图片进行微调，以保证对比度和美感 */
-.season-card.spring { background-color: rgba(240, 255, 244, 0.92); } /* 淡薄荷绿，增加一点透明度 */
-.season-card.spring .season-title { color: #2f855a; }
-.season-card.spring .season-description { color: #38a169; }
+.season-card.spring {
+  background-color: rgba(240, 255, 244, 0.92);
+} /* 淡薄荷绿，增加一点透明度 */
+.season-card.spring .season-title {
+  color: #2f855a;
+}
+.season-card.spring .season-description {
+  color: #38a169;
+}
 
-.season-card.summer { background-color: rgba(255, 254, 240, 0.92); } /* 淡柠檬黄 */
-.season-card.summer .season-title { color: #d69e2e; }
-.season-card.summer .season-description { color: #b7791f; } /* 调整夏天描述颜色加深一点 */
+.season-card.summer {
+  background-color: rgba(255, 254, 240, 0.92);
+} /* 淡柠檬黄 */
+.season-card.summer .season-title {
+  color: #d69e2e;
+}
+.season-card.summer .season-description {
+  color: #b7791f;
+} /* 调整夏天描述颜色加深一点 */
 
-.season-card.autumn { background-color: rgba(255, 245, 240, 0.92); } /* 淡橘色 */
-.season-card.autumn .season-title { color: #dd6b20; }
-.season-card.autumn .season-description { color: #c05621; } /* 调整秋天描述颜色加深一点 */
+.season-card.autumn {
+  background-color: rgba(255, 245, 240, 0.92);
+} /* 淡橘色 */
+.season-card.autumn .season-title {
+  color: #dd6b20;
+}
+.season-card.autumn .season-description {
+  color: #c05621;
+} /* 调整秋天描述颜色加深一点 */
 
-.season-card.winter { background-color: rgba(240, 249, 255, 0.92); } /* 淡天蓝色 */
-.season-card.winter .season-title { color: #2b6cb0; } /* 调整冬天标题颜色加深一点 */
-.season-card.winter .season-description { color: #3182ce; }
+.season-card.winter {
+  background-color: rgba(240, 249, 255, 0.92);
+} /* 淡天蓝色 */
+.season-card.winter .season-title {
+  color: #2b6cb0;
+} /* 调整冬天标题颜色加深一点 */
+.season-card.winter .season-description {
+  color: #3182ce;
+}
 
 /* 卡片悬浮效果 */
 .season-card:hover {
@@ -187,10 +214,18 @@
 }
 
 /* 悬浮时背景色变化 - 可以考虑变得更不透明或颜色更饱和 */
-.season-card.spring:hover { background-color: rgba(198, 246, 213, 0.98); }
-.season-card.summer:hover { background-color: rgba(254, 252, 191, 0.98); }
-.season-card.autumn:hover { background-color: rgba(254, 215, 215, 0.98); }
-.season-card.winter:hover { background-color: rgba(190, 227, 248, 0.98); }
+.season-card.spring:hover {
+  background-color: rgba(198, 246, 213, 0.98);
+}
+.season-card.summer:hover {
+  background-color: rgba(254, 252, 191, 0.98);
+}
+.season-card.autumn:hover {
+  background-color: rgba(254, 215, 215, 0.98);
+}
+.season-card.winter:hover {
+  background-color: rgba(190, 227, 248, 0.98);
+}
 
 /* router-link填满卡片 */
 .card-link {
@@ -220,14 +255,16 @@
 }
 
 /* === 响应式设计调整 === */
-@media (max-width: 1024px) { /* 调整断点为1024px，使卡片更早变为两列 */
+@media (max-width: 1024px) {
+  /* 调整断点为1024px，使卡片更早变为两列 */
   .season-card {
     flex-basis: calc(50% - 15px); /* (1 * 30px) / 2 = 15px */
     min-width: calc(50% - 15px);
   }
 }
 
-@media (max-width: 640px) { /* 调整小屏幕断点 */
+@media (max-width: 640px) {
+  /* 调整小屏幕断点 */
   .content-area {
     padding: 40px 15px; /* 调整内边距 */
     width: 95%;
@@ -255,7 +292,11 @@
   .card-link {
     padding: 25px 20px;
   }
-  .season-title { font-size: 1.6em; }
-  .season-description { font-size: 0.95em; }
+  .season-title {
+    font-size: 1.6em;
+  }
+  .season-description {
+    font-size: 0.95em;
+  }
 }
 </style>
