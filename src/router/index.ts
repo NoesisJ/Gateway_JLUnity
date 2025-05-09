@@ -105,31 +105,7 @@ const router = createRouter({
       name: 'winter',
       component: () => import('../views/scenery/WinterView.vue'),
     },
-    {
-      path: '/culture',
-      name: 'CultureHome',
-      component: () => import('../views/CultureHome.vue'),
-    },
-    {
-      path: '/culture/heritage',
-      name: 'CampusCulture',
-      component: () => import('../views/culture/CampusCulture.vue'),
-    },
-    {
-      path: '/culture/events',
-      name: 'CampusEvents',
-      component: () => import('../views/CampusEvents.vue'),
-    },
-    {
-      path: '/culture/services',
-      name: 'CampusServices',
-      component: () => import('../views/culture/CampusServices.vue'),
-    },
-    {
-      path: '/culture/clubs',
-      name: 'StudentClubs',
-      component: () => import('../views/culture/StudentClubs.vue'),
-    },
+   
   ],
 })
 
