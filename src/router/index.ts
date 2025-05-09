@@ -24,85 +24,85 @@ const router = createRouter({
     {
       path: '/scenery',
       name: 'scenery',
-      component: () => import('../views/SceneryView.vue'),
+      component: () => import('../views/scenery/SceneryView.vue'),
     },
     {
       path: '/academicresources',
       name: 'academicresources',
-      component: () => import('../views/AcademicResourcesView.vue'),
+      component: () => import('../views/academic/AcademicResourcesView.vue'),
     },
     {
       path: '/academicresources/library',
       name: 'library',
-      component: () => import('../views/LibraryView.vue'),
+      component: () => import('../views/academic/LibraryView.vue'),
     },
      {
       path: '/academicresources/databases',
       name: 'database-resources',
-      component: () => import('../views/DatabaseResourcesView.vue'),
+      component: () => import('../views/academic/DatabaseResourcesView.vue'),
     },
     {
       path: '/academicresources/journals',
       name: 'journal-resources',
-      component: () => import('../views/JournalResourcesView.vue'),
+      component: () => import('../views/academic/JournalResourcesView.vue'),
     },
     {
       path: '/academicresources/national-key-labs',
       name: 'national-key-labs',
        // 使用懒加载
-      component: () => import('../views/NationalKeyLabsView.vue'),
+      component: () => import('../views/academic/NationalKeyLabsView.vue'),
     },
     {
       path: '/academicresources/moe-key-labs',
       name: 'moe-key-labs',
        // 使用懒加载
-      component: () => import('../views/MoEKeyLabsView.vue'),
+      component: () => import('../views/academic/MoEKeyLabsView.vue'),
     },
     {
       path: '/academicresources/provincial-ministerial-bases',
       name: 'provincial-ministerial-bases',
        // 使用懒加载
-      component: () => import('../views/ProvincialMinisterialBasesView.vue'),
+      component: () => import('../views/academic/ProvincialMinisterialBasesView.vue'),
     },
     {
       path: '/academicresources/events',
       name: 'upcoming-events',
-      component: () => import('../views/UpcomingEventsView.vue'),
+      component: () => import('../views/academic/UpcomingEventsView.vue'),
     },
     {
       path: '/academicresources/achievements',
       name: 'research-achievements',
-      component: () => import('../views/ResearchAchievementsView.vue'),
+      component: () => import('../views/academic/ResearchAchievementsView.vue'),
     },
     {
       path: '/academicresources/exchange',
       name: 'academic-exchange',
-      component: () => import('../views/AcademicExchangeView.vue'), // 懒加载
+      component: () => import('../views/academic/AcademicExchangeView.vue'), // 懒加载
     },
      {
       path: '/academicresources/continuing-education',
       name: 'continuing-education',
-      component: () => import('../views/ContinuingEducationView.vue'), // 懒加载
+      component: () => import('../views/academic/ContinuingEducationView.vue'), // 懒加载
     },
     {
       path: '/scenery/spring',
       name: 'spring',
-      component: () => import('../views/SpringView.vue'),
+      component: () => import('../views/scenery/SpringView.vue'),
     },
     {
       path: '/scenery/summer',
       name: 'summer',
-      component: () => import('../views/SummerView.vue'),
+      component: () => import('../views/scenery/SummerView.vue'),
     },
     {
       path: '/scenery/autumn',
       name: 'autumn',
-      component: () => import('../views/AutumnView.vue'),
+      component: () => import('../views/scenery/AutumnView.vue'),
     },
     {
       path: '/scenery/winter',
       name: 'winter',
-      component: () => import('../views/WinterView.vue'),
+      component: () => import('../views/scenery/WinterView.vue'),
     },
   ],
 })

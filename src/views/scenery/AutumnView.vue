@@ -11,17 +11,17 @@
       <article class="autumn-description">
         <h2 class="section-title">品味吉大秋日神韵</h2>
 
-        <img src="../assets/imgs/sceneryView/autumn1.jpg" alt="吉大秋日风光一" class="inline-season-image">
+        <img src="../../assets/imgs/sceneryView/autumn1.jpg" alt="吉大秋日风光一" class="inline-season-image">
         <p>
           当第一缕秋风拂过，吉林大学的校园便开始了一场色彩的盛宴。夏日的浓绿逐渐被温暖的黄、热烈的红、深沉的褐所取代。阳光透过日渐稀疏的枝叶，洒下斑驳的光影，空气中弥漫着成熟果实与干爽落叶的清香。天空也显得格外高远湛蓝，映衬着校园里金黄的银杏、火红的枫叶，构成一幅浓墨重彩的油画。
         </p>
 
-        <img src="../assets/imgs/sceneryView/autumn2.jpg" alt="吉大秋日风光二" class="inline-season-image">
+        <img src="../../assets/imgs/sceneryView/autumn2.jpg" alt="吉大秋日风光二" class="inline-season-image">
         <p>
           漫步在文苑路、鼎新路，脚下是厚厚的落叶地毯，发出沙沙的声响，仿佛是秋日最温柔的低语。图书馆窗外的景色也日渐斑斓，为埋首苦读的学子平添几分诗意。清晨，薄雾轻锁，给校园蒙上一层神秘的面纱；午后，阳光和煦，最宜在长椅上静坐，感受秋日的静美与从容。这不仅是景色的变换，更是心境的沉淀，是收获的喜悦与对未来的憧憬交织的季节。
         </p>
 
-        <img src="../assets/imgs/sceneryView/autumn3.jpg" alt="吉大秋日风光三" class="inline-season-image">
+        <img src="../../assets/imgs/sceneryView/autumn3.jpg" alt="吉大秋日风光三" class="inline-season-image">
         <p>
           秋季的吉大，往往伴随着新学期的开始，校园里充满了朝气与求知的渴望。各类学术研讨、文化交流活动也频繁举办，为这诗意的季节增添了浓厚的学术氛围。秋日的吉大，是摄影爱好者的天堂，是诗人墨客的灵感源泉，更是每一位吉大人心中一幅珍藏的、关于成长与收获的温暖画卷。
         </p>
@@ -59,7 +59,7 @@
   color: #fff;
 
   /* 使用 autumn0.jpg 作为背景图片，通过相对路径 */
-  background-image: url('../assets/imgs/sceneryView/autumn0.jpg'); /* 相对路径 */
+  background-image: url('../../assets/imgs/sceneryView/autumn0.jpg'); /* 相对路径 */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
