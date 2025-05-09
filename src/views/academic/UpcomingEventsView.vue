@@ -77,9 +77,9 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // 1. 导入图片 (使用相对路径)
-import imgLaiRui from '../assets/imgs/academic/赖睿.png';
-import imgYuWanli from '../assets/imgs/academic/虞万里.png';
-import imgMeeting from '../assets/imgs/academic/会议相关.png';
+import imgLaiRui from '../../assets/imgs/academic/赖睿.png';
+import imgYuWanli from '../../assets/imgs/academic/虞万里.png';
+import imgMeeting from '../../assets/imgs/academic/会议相关.png';
 
 const router = useRouter();
 

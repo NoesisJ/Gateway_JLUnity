@@ -45,9 +45,9 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // 导入图片 (使用相对路径 .. )
-import imgGinsengLab from '../assets/imgs/academic/吉林省人参科学与技术重点实验室.png';
-import imgAutoElecCenter from '../assets/imgs/academic/吉林省汽车电子工程研究中心.png';
-import imgNeaCenter from '../assets/imgs/academic/东北亚研究中心.png';
+import imgGinsengLab from '../../assets/imgs/academic/吉林省人参科学与技术重点实验室.png';
+import imgAutoElecCenter from '../../assets/imgs/academic/吉林省汽车电子工程研究中心.png';
+import imgNeaCenter from '../../assets/imgs/academic/东北亚研究中心.png';
 
 
 const router = useRouter();

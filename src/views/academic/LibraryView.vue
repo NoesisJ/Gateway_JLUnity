@@ -40,13 +40,13 @@ import { useRouter } from 'vue-router';
 
 // 导入图片 - 确保路径正确
 // Vite/Vue CLI 会处理这些导入，将它们转换为有效的 URL
-import dixueguanImg from '../assets/imgs/academic/地学馆.png';
-import dingxinImg from '../assets/imgs/academic/鼎新图书馆.png';
-import gongxueguanImg from '../assets/imgs/academic/工学馆.png';
-import nongxueguanImg from '../assets/imgs/academic/农学馆.png';
-import xinxixueguanImg from '../assets/imgs/academic/信息学馆.png';
-import yixueguanImg from '../assets/imgs/academic/医学馆.png';
-import zhongxinImg from '../assets/imgs/academic/中心图书馆.png';
+import dixueguanImg from '../../assets/imgs/academic/地学馆.png';
+import dingxinImg from '../../assets/imgs/academic/鼎新图书馆.png';
+import gongxueguanImg from '../../assets/imgs/academic/工学馆.png';
+import nongxueguanImg from '../../assets/imgs/academic/农学馆.png';
+import xinxixueguanImg from '../../assets/imgs/academic/信息学馆.png';
+import yixueguanImg from '../../assets/imgs/academic/医学馆.png';
+import zhongxinImg from '../../assets/imgs/academic/中心图书馆.png';
 
 const router = useRouter();
 

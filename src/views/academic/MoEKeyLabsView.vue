@@ -41,15 +41,15 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // 导入图片 (使用相对路径 .. )
-import imgSymbolicComp from '../assets/imgs/academic/符号计算与知识工程教育部.png';
-import imgMolecularEnzyme from '../assets/imgs/academic/分子酶学工程教育部.png';
-import imgBionics from '../assets/imgs/academic/重点实验室工程仿生教育部.png';
-import imgSpecialPlastics from '../assets/imgs/academic/特种工程塑料教育部工程研究中心.png';
-import imgPathology from '../assets/imgs/academic/病理生物学教育部重点实验室.png';
-import imgGeoInfo from '../assets/imgs/academic/地球信息探测仪器教育部重点实验室.png';
-import imgZoonosis from '../assets/imgs/academic/人兽共患病研究教育重点实验室.png';
-import imgGroundwater from '../assets/imgs/academic/地下水资源与环境教育部重点实验室.png';
-import imgAutoDev from '../assets/imgs/academic/汽车开发教育部工程研究中心.png';
+import imgSymbolicComp from '../../assets/imgs/academic/符号计算与知识工程教育部.png';
+import imgMolecularEnzyme from '../../assets/imgs/academic/分子酶学工程教育部.png';
+import imgBionics from '../../assets/imgs/academic/重点实验室工程仿生教育部.png';
+import imgSpecialPlastics from '../../assets/imgs/academic/特种工程塑料教育部工程研究中心.png';
+import imgPathology from '../../assets/imgs/academic/病理生物学教育部重点实验室.png';
+import imgGeoInfo from '../../assets/imgs/academic/地球信息探测仪器教育部重点实验室.png';
+import imgZoonosis from '../../assets/imgs/academic/人兽共患病研究教育重点实验室.png';
+import imgGroundwater from '../../assets/imgs/academic/地下水资源与环境教育部重点实验室.png';
+import imgAutoDev from '../../assets/imgs/academic/汽车开发教育部工程研究中心.png';
 
 
 const router = useRouter();

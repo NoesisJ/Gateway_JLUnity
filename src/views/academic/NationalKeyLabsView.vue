@@ -41,12 +41,12 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 
 // 导入图片 (使用相对路径 .. )
-import imgChassisBionics from '../assets/imgs/academic/吉林大学汽车底盘集成与仿生全国重点实验室.png';
-import imgSupramolecular from '../assets/imgs/academic/超分子结构与材料.png';
-import imgInorganicSynth from '../assets/imgs/academic/无机合成与制备化学.png';
-import imgIntegratedOpto from '../assets/imgs/academic/集成光电子.png';
-import imgHighPressure from '../assets/imgs/academic/高压与超硬材料国家重点实验室.png';
-import imgDeepExploration from '../assets/imgs/academic/深部探测与成像全国重点实验室.png';
+import imgChassisBionics from '../../assets/imgs/academic/吉林大学汽车底盘集成与仿生全国重点实验室.png';
+import imgSupramolecular from '../../assets/imgs/academic/超分子结构与材料.png';
+import imgInorganicSynth from '../../assets/imgs/academic/无机合成与制备化学.png';
+import imgIntegratedOpto from '../../assets/imgs/academic/集成光电子.png';
+import imgHighPressure from '../../assets/imgs/academic/高压与超硬材料国家重点实验室.png';
+import imgDeepExploration from '../../assets/imgs/academic/深部探测与成像全国重点实验室.png';
 
 const router = useRouter();
 
