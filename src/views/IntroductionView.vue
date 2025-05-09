@@ -38,7 +38,12 @@
             <div
               :class="['grid-cell', 'grid-color-2', { 'animate-grid-rotate': currentPage === 0 }]"
               style="animation-delay: 50ms"
-            ></div>
+            >
+              <div class="grid-cell-content">
+                <div class="grid-cell-number">45</div>
+                <div class="grid-cell-text">院士团队</div>
+              </div>
+            </div>
             <div
               :class="['grid-cell', 'grid-color-3', { 'animate-grid-rotate': currentPage === 0 }]"
               style="animation-delay: 100ms"
@@ -254,7 +259,7 @@
           <!-- 右侧区域 - 80%宽度 - 直接将背景类应用在主元素上 -->
           <div class="w-[80%] h-full second-page-right-bg bg-[#554a48] perspective-1000">
             <!-- 卡片容器 -->
-            <div class="p-8 grid grid-cols-3 grid-rows-2 gap-8 h-full pb-24">
+            <div class="p-8 grid grid-cols-3 grid-rows-2 gap-12 h-full pb-24">
               <!-- 人物卡片 - 按时间递减排序 -->
               <!-- 张希 - 第一个位置 -->
               <div
@@ -263,7 +268,7 @@
                 style="animation-delay: 0ms"
               >
                 <div
-                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
                 >
                   <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
                     <div
@@ -272,7 +277,7 @@
                     <img
                       src="../assets/imgs/introductionView/headmasterzhang.webp"
                       alt="张希"
-                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
@@ -289,7 +294,7 @@
                 style="animation-delay: 100ms"
               >
                 <div
-                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
                 >
                   <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
                     <div
@@ -298,7 +303,7 @@
                     <img
                       src="../assets/imgs/introductionView/headmasterli.jpg"
                       alt="李元元"
-                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
@@ -315,7 +320,7 @@
                 style="animation-delay: 200ms"
               >
                 <div
-                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
                 >
                   <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
                     <div
@@ -324,7 +329,7 @@
                     <img
                       src="../assets/imgs/introductionView/headmasterzhan.jpg"
                       alt="展涛"
-                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
@@ -341,7 +346,7 @@
                 style="animation-delay: 300ms"
               >
                 <div
-                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
                 >
                   <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
                     <div
@@ -350,7 +355,7 @@
                     <img
                       src="../assets/imgs/introductionView/headmasterzhou.jpg"
                       alt="周其凤"
-                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
@@ -367,7 +372,7 @@
                 style="animation-delay: 400ms"
               >
                 <div
-                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
                 >
                   <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
                     <div
@@ -376,7 +381,7 @@
                     <img
                       src="../assets/imgs/introductionView/headmasterwu.jpg"
                       alt="吴博达"
-                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
@@ -393,7 +398,7 @@
                 style="animation-delay: 500ms"
               >
                 <div
-                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
                 >
                   <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
                     <div
@@ -402,7 +407,7 @@
                     <img
                       src="../assets/imgs/introductionView/headmasterliu.jpg"
                       alt="刘中树"
-                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
@@ -412,17 +417,12 @@
                 </div>
               </div>
 
-              <!-- 棕色圆形导航按钮 -->
+              <!-- 更换右下角按钮为文字按钮 -->
               <router-link
                 to="/more-principals"
-                class="absolute bottom-8 right-8 w-16 h-16 rounded-full bg-[#8B4513] flex items-center justify-center shadow-lg hover:bg-[#A0522D] transition-colors duration-300 group"
+                class="absolute bottom-16 right-8 bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-lg shadow-lg transition-colors duration-300 text-lg font-medium"
               >
-                <i class="pi pi-arrow-right text-white text-xl"></i>
-                <div
-                  class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/70 text-white text-sm py-1 px-3 rounded-md -top-10 whitespace-nowrap"
-                >
-                  了解更多
-                </div>
+                了解更多
               </router-link>
             </div>
           </div>
