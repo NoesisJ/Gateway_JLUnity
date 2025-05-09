@@ -121,17 +121,22 @@
 /* === 介绍区域样式 === */
 .intro-section {
   width: 100%;
-  max-width: 800px; /* 限制介绍文本的宽度 */
+  max-width: 800px; 
   text-align: center;
-  margin-bottom: 50px; /* 增加与下方四季卡片的间距 */
+  margin-bottom: 50px; 
+  /* 新增：为介绍区域添加半透明挡板 */
+  background-color: rgba(0, 0, 0, 0.25); /* 示例：25% 不透明度的黑色挡板，可以比标题的挡板略浅 */
+  padding: 25px 30px; /* 为挡板增加内边距 */
+  border-radius: 8px; /* 可选：圆角 */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 可选：轻微阴影 */
 }
 .intro-section p {
-  color: #f0f0f0; /* 介绍文字颜色改为浅灰色或白色 */
-  font-size: 1.2em; /* 调整字号 */
+  color: #f0f0f0; 
+  font-size: 1.2em; 
   line-height: 1.8;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.75);
+  margin-bottom: 0; /* 因为挡板有了padding，段落本身的margin可以调整 */
 }
-
 /* === 四季板块网格布局 === */
 .seasons-grid {
   display: flex;
