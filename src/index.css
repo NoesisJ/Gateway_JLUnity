@@ -189,3 +189,8 @@ body {
   transform-style: preserve-3d;
   backface-visibility: hidden;
 }
+
+/* Add text indentation utility */
+.text-indent-2em {
+  text-indent: 2em;
+}

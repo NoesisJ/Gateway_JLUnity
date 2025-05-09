@@ -234,22 +234,283 @@
           </div>
         </div>
 
-        <div class="page flex-shrink-0 w-full h-full bg-green-500 flex items-center justify-center">
-          <h1 class="text-4xl text-white font-bold">吉林大学简介 - 第二页</h1>
+        <!-- 第二页 - 人物页 -->
+        <div class="page flex-shrink-0 w-full h-full flex">
+          <!-- 左侧区域 - 20%宽度，直接将背景类应用在主元素上 -->
+          <div
+            class="w-[20%] h-full bg-[#2b27276f] flex flex-col items-center justify-center text-white relative second-page-left-bg"
+          >
+            <div class="flex flex-col items-center">
+              <div class="text-5xl from-neutral-400 writing-vertical-lr mb-8">人物·吉大</div>
+            </div>
+            <div
+              class="writing-vertical-lr text-amber-50 absolute right-24"
+              style="letter-spacing: 0.5em"
+            >
+              桃李芬芳，人才辈出
+            </div>
+          </div>
+
+          <!-- 右侧区域 - 80%宽度 - 直接将背景类应用在主元素上 -->
+          <div class="w-[80%] h-full second-page-right-bg bg-[#554a48] perspective-1000">
+            <!-- 卡片容器 -->
+            <div class="p-8 grid grid-cols-3 grid-rows-2 gap-8 h-full pb-24">
+              <!-- 人物卡片 - 按时间递减排序 -->
+              <!-- 张希 - 第一个位置 -->
+              <div
+                class="person-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 1 && !isFromExternalPage }"
+                style="animation-delay: 0ms"
+              >
+                <div
+                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/headmasterzhang.webp"
+                      alt="张希"
+                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">张希</div>
+                    <div class="text-sm opacity-80">2018.10—至今</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 李元元 -->
+              <div
+                class="person-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 1 && !isFromExternalPage }"
+                style="animation-delay: 100ms"
+              >
+                <div
+                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/headmasterli.jpg"
+                      alt="李元元"
+                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">李元元</div>
+                    <div class="text-sm opacity-80">2011.09—2018.10</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 展涛 -->
+              <div
+                class="person-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 1 && !isFromExternalPage }"
+                style="animation-delay: 200ms"
+              >
+                <div
+                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/headmasterzhan.jpg"
+                      alt="展涛"
+                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">展涛</div>
+                    <div class="text-sm opacity-80">2008.11—2011.02</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 周其凤 -->
+              <div
+                class="person-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 1 && !isFromExternalPage }"
+                style="animation-delay: 300ms"
+              >
+                <div
+                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/headmasterzhou.jpg"
+                      alt="周其凤"
+                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">周其凤</div>
+                    <div class="text-sm opacity-80">2004.07—2008.11</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 吴博达 -->
+              <div
+                class="person-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 1 && !isFromExternalPage }"
+                style="animation-delay: 400ms"
+              >
+                <div
+                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/headmasterwu.jpg"
+                      alt="吴博达"
+                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">吴博达</div>
+                    <div class="text-sm opacity-80">2002.12—2004.07</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 刘中树 -->
+              <div
+                class="person-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 1 && !isFromExternalPage }"
+                style="animation-delay: 500ms"
+              >
+                <div
+                  class="bg-black/40 w-full h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/headmasterliu.jpg"
+                      alt="刘中树"
+                      class="h-full w-auto max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">刘中树</div>
+                    <div class="text-sm opacity-80">2000.06—2002.12</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 棕色圆形导航按钮 -->
+              <router-link
+                to="/more-principals"
+                class="absolute bottom-8 right-8 w-16 h-16 rounded-full bg-[#8B4513] flex items-center justify-center shadow-lg hover:bg-[#A0522D] transition-colors duration-300 group"
+              >
+                <i class="pi pi-arrow-right text-white text-xl"></i>
+                <div
+                  class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/70 text-white text-sm py-1 px-3 rounded-md -top-10 whitespace-nowrap"
+                >
+                  了解更多
+                </div>
+              </router-link>
+            </div>
+          </div>
         </div>
-        <div
-          class="page flex-shrink-0 w-full h-full bg-yellow-500 flex items-center justify-center"
-        >
-          <h1 class="text-4xl text-white font-bold">吉林大学简介 - 第三页</h1>
+
+        <!-- 第三页 - 史况页 -->
+        <div class="page flex-shrink-0 w-full h-full bg-yellow-50 flex">
+          <!-- 左侧区域 - 20%宽度 -->
+          <div
+            class="w-[20%] h-full bg-yellow-50 flex flex-col items-center justify-center text-black relative"
+          >
+            <div class="flex flex-col items-center">
+              <div class="text-5xl font-normal writing-vertical-lr mb-8 text-gray-800">
+                史况·吉大
+              </div>
+            </div>
+            <div
+              class="writing-vertical-lr text-gray-600 absolute right-24"
+              style="letter-spacing: 0.5em"
+            >
+              百年沧桑，薪火相传
+            </div>
+          </div>
+
+          <!-- 中间区域 - 50%宽度 -->
+          <div class="w-[50%] h-full bg-yellow-50 p-10 flex flex-col justify-center">
+            <div class="text-4xl font-bold text-gray-800 mb-8">吉大·史苑</div>
+            <div class="relative">
+              <!-- 文字内容区域，固定高度，添加垂直滚动条 -->
+              <div class="h-[320px] pr-8 overflow-y-auto scrollbar-hide space-y-6 text-gray-700">
+                <p class="text-lg text-indent-2em">
+                  吉林大学始建于1946年，前身为1937年成立的伪满洲国国立大学，后更名为东北行政学院。1950年，东北人民政府将原东北行政学院与原东北大学文法学院合并组建成立吉林大学。
+                </p>
+                <p class="text-lg text-indent-2em">
+                  1958年，吉林大学被确定为全国重点大学，开始走向新的发展阶段。1960年被列为全国重点大学之一，成为"七五"、"八五"期间首批211工程重点建设高校，2001年跻身"985工程"重点建设高校行列。
+                </p>
+                <p class="text-lg text-indent-2em">
+                  2000年6月12日，原吉林大学、吉林工业大学、白求恩医科大学、长春科技大学、长春邮电学院合并组建新的吉林大学。2004年8月29日，原中国人民解放军军需大学并入。吉林大学经过合并调整后，已发展成为一所规模大、学科全、师资强、底蕴深的教育部直属重点综合性大学。
+                </p>
+                <p class="text-lg text-indent-2em">
+                  吉林大学现有7个校区，37个学院（部），8所附属医院，学科门类齐全，涵盖哲学、经济学、法学、教育学、文学、历史学、理学、工学、农学、医学、军事学、管理学、艺术学等13个学科门类。
+                </p>
+                <p class="text-lg text-indent-2em">
+                  百余年来，吉林大学历经风雨，薪火相传，走过了从私立、官立到国立，从单科性到多科性、综合性，从区域性到全国性、国际性的发展历程。如今，吉林大学已发展成为博士、硕士、本科等多层次人才培养体系齐全的综合性研究型大学。
+                </p>
+                <p class="text-lg text-indent-2em">
+                  在长期的办学实践中，吉林大学形成了"求实创新"的校训和"自强不息、厚德载物、求是创新、追求卓越"的精神。学校大力弘扬优良的革命传统和民主科学精神，倡导勤奋严谨、求实创新的优良学风，坚持"高起点、厚基础、严要求、重能力"的教学原则。
+                </p>
+                <p class="text-lg text-indent-2em">
+                  迄今为止，吉林大学已为国家培养了70余万名各类人才，其中不少成为国家和地方的领导人才、学术界的知名专家和教授、企业界的商业精英。校友中有14位当选为中国科学院院士，12位当选为中国工程院院士，数百位担任省部级以上领导干部。
+                </p>
+                <p class="text-lg text-indent-2em">
+                  进入新时代，吉林大学深入贯彻落实新时代党的教育方针，坚持社会主义办学方向，落实立德树人根本任务，加快世界一流大学和一流学科建设，推动学校各项事业高质量发展，为全面建设社会主义现代化国家、实现中华民族伟大复兴的中国梦作出新的更大贡献。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 右侧区域 - 30%宽度，放置两张图片 -->
+          <div class="w-[30%] h-full bg-yellow-50 flex flex-col justify-center items-center p-8">
+            <div class="h-[45%] w-full mb-4 overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="../assets/imgs/introductionView/jlu-introduction5.png"
+                alt="伪满洲国皇宫"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="h-[45%] w-full overflow-hidden rounded-lg shadow-lg">
+              <img
+                src="../assets/imgs/introductionView/jlu-introduction6.jpg"
+                alt="朝阳校区教学楼"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="mt-3 ml-8 text-center text-gray-700">
+              <p>伪满洲国皇宫，今朝阳校区教学楼</p>
+            </div>
+          </div>
         </div>
+
         <div class="page flex-shrink-0 w-full h-full bg-red-500 flex items-center justify-center">
           <h1 class="text-4xl text-white font-bold">吉林大学简介 - 第四页</h1>
         </div>
       </div>
 
-      <!-- 底部黑色渐变背景 -->
+      <!-- 底部黑色渐变背景 - 增加高度至30% -->
       <div
-        class="fixed bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black/60 to-transparent z-10"
+        class="fixed bottom-0 left-0 w-full h-[30%] bg-gradient-to-t from-black/60 to-transparent z-10"
       ></div>
 
       <!-- 底部刻度尺进度条 -->
@@ -351,7 +612,7 @@
                 class="absolute bottom-6 left-1/2 transform -translate-x-1/2 text-xs sm:text-sm md:text-base text-white font-medium whitespace-nowrap"
                 :class="currentPage === 3 ? 'opacity-100' : 'opacity-70'"
               >
-                馆藏
+                校区
               </div>
             </div>
           </div>
@@ -581,6 +842,20 @@ onBeforeUnmount(() => {
 
 .right-section-bg {
   background-image: url('../assets/imgs/introductionView/jlu-introduction1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.second-page-left-bg {
+  background-image: url('../assets/imgs/introductionView/jlu-introduction3.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.second-page-right-bg {
+  background-image: url('../assets/imgs/introductionView/jlu-introduction4.jpg');
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;

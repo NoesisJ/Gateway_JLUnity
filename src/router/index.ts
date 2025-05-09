@@ -37,7 +37,7 @@ const router = createRouter({
       name: 'library',
       component: () => import('../views/academic/LibraryView.vue'),
     },
-     {
+    {
       path: '/academicresources/databases',
       name: 'database-resources',
       component: () => import('../views/academic/DatabaseResourcesView.vue'),
@@ -50,19 +50,19 @@ const router = createRouter({
     {
       path: '/academicresources/national-key-labs',
       name: 'national-key-labs',
-       // 使用懒加载
+      // 使用懒加载
       component: () => import('../views/academic/NationalKeyLabsView.vue'),
     },
     {
       path: '/academicresources/moe-key-labs',
       name: 'moe-key-labs',
-       // 使用懒加载
+      // 使用懒加载
       component: () => import('../views/academic/MoEKeyLabsView.vue'),
     },
     {
       path: '/academicresources/provincial-ministerial-bases',
       name: 'provincial-ministerial-bases',
-       // 使用懒加载
+      // 使用懒加载
       component: () => import('../views/academic/ProvincialMinisterialBasesView.vue'),
     },
     {
@@ -80,7 +80,7 @@ const router = createRouter({
       name: 'academic-exchange',
       component: () => import('../views/academic/AcademicExchangeView.vue'), // 懒加载
     },
-     {
+    {
       path: '/academicresources/continuing-education',
       name: 'continuing-education',
       component: () => import('../views/academic/ContinuingEducationView.vue'), // 懒加载
