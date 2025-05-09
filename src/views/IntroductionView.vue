@@ -503,8 +503,193 @@
           </div>
         </div>
 
-        <div class="page flex-shrink-0 w-full h-full bg-red-500 flex items-center justify-center">
-          <h1 class="text-4xl text-white font-bold">吉林大学简介 - 第四页</h1>
+        <!-- 第四页 - 校区页 -->
+        <div class="page flex-shrink-0 w-full h-full flex">
+          <!-- 左侧区域 - 20%宽度 -->
+          <div
+            class="w-[20%] h-full flex flex-col bg-[#faeaea52] items-center justify-center text-white relative fourth-page-left-bg"
+          >
+            <div class="flex flex-col items-center">
+              <div class="text-5xl from-neutral-400 writing-vertical-lr mb-8 mr-24">吉大·校区</div>
+            </div>
+            <div
+              class="writing-vertical-lr text-gray-200 absolute right-32"
+              style="letter-spacing: 0.5em"
+            >
+              美丽的长春美丽的长春市坐落在吉林大学校内
+            </div>
+          </div>
+
+          <!-- 右侧区域 - 80%宽度 -->
+          <div class="w-[80%] h-full fourth-page-right-bg bg-[#e4eff93e] perspective-1000">
+            <!-- 卡片容器 -->
+            <div class="p-8 grid grid-cols-3 grid-rows-2 gap-12 h-full pb-24">
+              <!-- 校区卡片 -->
+              <!-- 南岭校区 -->
+              <div
+                class="campus-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
+                style="animation-delay: 0ms"
+              >
+                <div
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/jlu-introduction5.png"
+                      alt="南岭校区"
+                      class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">南岭校区</div>
+                    <div class="text-sm opacity-80">中心校区</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 朝阳校区 -->
+              <div
+                class="campus-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
+                style="animation-delay: 100ms"
+              >
+                <div
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/jlu-introduction6.jpg"
+                      alt="朝阳校区"
+                      class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">朝阳校区</div>
+                    <div class="text-sm opacity-80">人文社科</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 前卫校区 -->
+              <div
+                class="campus-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
+                style="animation-delay: 200ms"
+              >
+                <div
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/jlu-introduction1.jpg"
+                      alt="前卫校区"
+                      class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">前卫校区</div>
+                    <div class="text-sm opacity-80">工科理科</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 新民校区 -->
+              <div
+                class="campus-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
+                style="animation-delay: 300ms"
+              >
+                <div
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/jlu-introduction2.png"
+                      alt="新民校区"
+                      class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">新民校区</div>
+                    <div class="text-sm opacity-80">经济管理</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 和平校区 -->
+              <div
+                class="campus-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
+                style="animation-delay: 400ms"
+              >
+                <div
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/jlu-introduction3.png"
+                      alt="和平校区"
+                      class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">和平校区</div>
+                    <div class="text-sm opacity-80">医学部</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 白求恩校区 -->
+              <div
+                class="campus-card flex items-center justify-center"
+                :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
+                style="animation-delay: 500ms"
+              >
+                <div
+                  class="bg-black/40 w-[95%] h-5/6 flex flex-col relative overflow-hidden group rounded-lg shadow-xl"
+                >
+                  <div class="h-3/4 relative flex items-center justify-center bg-gray-100">
+                    <div
+                      class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
+                    ></div>
+                    <img
+                      src="../assets/imgs/introductionView/jlu-introduction4.jpg"
+                      alt="白求恩校区"
+                      class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div class="h-1/4 p-3 text-white flex flex-col justify-center">
+                    <div class="text-2xl font-bold">白求恩校区</div>
+                    <div class="text-sm opacity-80">医学部</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 了解更多按钮 -->
+              <router-link
+                to="/more-campus"
+                class="absolute bottom-8 right-8 bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg transition-colors duration-300 text-lg font-medium"
+              >
+                了解更多
+              </router-link>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -856,6 +1041,20 @@ onBeforeUnmount(() => {
 
 .second-page-right-bg {
   background-image: url('../assets/imgs/introductionView/jlu-introduction4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.fourth-page-left-bg {
+  background-image: url('../assets/imgs/introductionView/jlu-introduction7.jpg');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+.fourth-page-right-bg {
+  background-image: url('../assets/imgs/introductionView/jlu-introduction8.jpg');
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
