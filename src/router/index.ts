@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useSectionStore } from '../stores/sectionStore'
 
-
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -19,6 +18,22 @@ const router = createRouter({
       component: () => import('../views/IntroductionView.vue'),
       meta: {
         customTransition: true, // 标记此页面使用自定义过渡动画
+        hideHeader: true, // 标记此页面不显示header
+      },
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/RegisterView.vue'),
+      meta: {
+        hideHeader: true, // 标记此页面不显示header
+      },
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue'),
+      meta: {
         hideHeader: true, // 标记此页面不显示header
       },
     },
@@ -56,13 +71,11 @@ const router = createRouter({
     {
       path: '/academicresources/moe-key-labs',
       name: 'moe-key-labs',
-      // 使用懒加载
       component: () => import('../views/academic/MoEKeyLabsView.vue'),
     },
     {
       path: '/academicresources/provincial-ministerial-bases',
       name: 'provincial-ministerial-bases',
-      // 使用懒加载
       component: () => import('../views/academic/ProvincialMinisterialBasesView.vue'),
     },
     {
@@ -106,28 +119,28 @@ const router = createRouter({
       component: () => import('../views/scenery/WinterView.vue'),
     },
     {
-     path: '/culture',
-     name: 'CultureHome',
+      path: '/culture',
+      name: 'CultureHome',
       component: () => import('../views/culture/CultureHome.vue'),
     },
     {
-     path: '/culture/campus',
-     name: 'CampusCulture',
+      path: '/culture/campus',
+      name: 'CampusCulture',
       component: () => import('../views/culture/CampusCulture.vue'),
     },
     {
-     path: '/culture/events',
-     name: 'CampusEvents',
+      path: '/culture/events',
+      name: 'CampusEvents',
       component: () => import('../views/culture/CampusEvents.vue'),
     },
     {
-     path: '/culture/services',
-     name: 'CampusServices',
+      path: '/culture/services',
+      name: 'CampusServices',
       component: () => import('../views/culture/CampusServices.vue'),
     },
     {
-     path: '/culture',
-     name: 'StudentClubs',
+      path: '/culture',
+      name: 'StudentClubs',
       component: () => import('../views/culture/StudentClubs.vue'),
     },
   ],

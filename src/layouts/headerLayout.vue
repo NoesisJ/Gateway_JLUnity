@@ -30,9 +30,12 @@
     <div class="flex items-center">
       <!-- 桌面端图标 -->
       <div class="hidden md:flex icon-container space-x-4 lg:space-x-8 pr-2 lg:pr-8">
-        <div class="icon-item cursor-pointer">
-          <i class="pi pi-search text-xl"></i>
-        </div>
+        <router-link to="/register" class="icon-item cursor-pointer">
+          <i class="pi pi-user-plus text-xl" title="注册"></i>
+        </router-link>
+        <router-link to="/login" class="icon-item cursor-pointer">
+          <i class="pi pi-user text-xl" title="登录"></i>
+        </router-link>
         <div class="icon-item cursor-pointer">
           <i class="pi pi-phone text-xl"></i>
         </div>
@@ -60,12 +63,12 @@
 
       <!-- 移动端图标 -->
       <div class="flex justify-center space-x-8 py-4 md:hidden">
-        <div class="icon-item cursor-pointer">
-          <i class="pi pi-search text-xl"></i>
-        </div>
-        <div class="icon-item cursor-pointer">
+        <router-link to="/register" class="icon-item cursor-pointer">
+          <i class="pi pi-user-plus text-xl"></i>
+        </router-link>
+        <router-link to="/login" class="icon-item cursor-pointer">
           <i class="pi pi-user text-xl"></i>
-        </div>
+        </router-link>
         <div class="icon-item cursor-pointer">
           <i class="pi pi-phone text-xl"></i>
         </div>

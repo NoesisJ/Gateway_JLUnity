@@ -38,7 +38,7 @@
           <div v-for="item in traditions" :key="item.id" class="tradition-card">
             <h3>{{ item.title }}</h3>
             <p>{{ item.description }}</p>
-            <img :src="item.image" :alt="item.title">
+            <img :src="item.image" :alt="item.title" />
           </div>
         </div>
       </section>
@@ -46,32 +46,28 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const history = [
   { year: '1946', event: '东北行政学院成立，吉林大学前身' },
   { year: '1952', event: '全国院系调整，成为综合性大学' },
-  { year: '2000', event: '原吉林大学等五校合并组建新吉林大学' }
+  { year: '2000', event: '原吉林大学等五校合并组建新吉林大学' },
 ]
 
-const coreValues = [
-  '崇尚科学 追求真理',
-  '开放包容 海纳百川',
-  '知行合一 服务社会'
-]
+const coreValues = ['崇尚科学 追求真理', '开放包容 海纳百川', '知行合一 服务社会']
 
 const traditions = [
   {
     id: 1,
     title: '鼎新讲座',
     description: '每周举办的跨学科学术讲座，延续60余年',
-    image: '/images/culture/lecture.jpg'
+    image: '/images/culture/lecture.jpg',
   },
   {
     id: 2,
     title: '五月鲜花',
     description: '年度文艺汇演，展示学生艺术才华',
-    image: '/images/culture/performance.jpg'
-  }
+    image: '/images/culture/performance.jpg',
+  },
 ]
 </script>
 
