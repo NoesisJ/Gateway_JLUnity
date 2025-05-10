@@ -146,9 +146,6 @@
       </div>
 
       <div class="container mx-auto py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-8">
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 md:mb-12 text-center">
-          校园风采
-        </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           <div
             v-for="(feature, index) in features"

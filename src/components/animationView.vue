@@ -40,14 +40,32 @@
 
     <!-- 过渡动画层 - 加载动画层 -->
     <div
-      class="white-overlay absolute inset-0 z-30 bg-white flex items-center justify-center rounded-2xl md:rounded-3xl overflow-hidden"
+      class="white-overlay absolute inset-0 z-30 flex items-center justify-center rounded-2xl md:rounded-3xl overflow-hidden"
       :class="{
         'animate-step2': animationStep >= 2 && animationStep < 4,
         'animate-step4': animationStep >= 4,
       }"
     >
+      <!-- 白色加载层背景 -->
+      <div class="absolute inset-0 bg-gradient-to-br from-white to-[#f5f7fa]"></div>
+
+      <!-- 白色加载层动态条纹 -->
+      <div class="stripes-container-white absolute inset-0 overflow-hidden opacity-10">
+        <div class="stripe-white stripe-white-1"></div>
+        <div class="stripe-white stripe-white-2"></div>
+        <div class="stripe-white stripe-white-3"></div>
+      </div>
+
+      <!-- 白色加载层几何图形 -->
+      <div class="geometric-shapes-white absolute inset-0 overflow-hidden">
+        <div class="circle-shape-white circle-white-1"></div>
+        <div class="circle-shape-white circle-white-2"></div>
+        <div class="hexagon-shape hexagon-1"></div>
+        <div class="triangle-shape triangle-1"></div>
+      </div>
+
       <div
-        class="flex flex-col items-center"
+        class="flex flex-col items-center relative z-10"
         :class="{
           'opacity-0 pointer-events-none': animationStep < 3,
           'fade-out': animationStep > 3,
@@ -285,6 +303,46 @@ onMounted(() => {
   animation: stripe-move 35s linear infinite reverse;
 }
 
+/* 白色加载层动态条纹 */
+.stripes-container-white {
+  width: 100%;
+  height: 100%;
+}
+
+.stripe-white {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(75, 108, 183, 0.07) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(75, 108, 183, 0.07) 50%,
+    rgba(75, 108, 183, 0.07) 75%,
+    transparent 75%
+  );
+  background-size: 100px 100px;
+  transform: skewX(30deg);
+}
+
+.stripe-white-1 {
+  width: 35%;
+  left: -10%;
+  animation: stripe-move 60s linear infinite;
+}
+
+.stripe-white-2 {
+  width: 40%;
+  left: 25%;
+  animation: stripe-move 45s linear infinite reverse;
+}
+
+.stripe-white-3 {
+  width: 30%;
+  right: 5%;
+  animation: stripe-move 50s linear infinite;
+}
+
 @keyframes stripe-move {
   from {
     background-position: 0 0;
@@ -349,6 +407,87 @@ onMounted(() => {
   animation: float 35s ease-in-out infinite reverse;
 }
 
+/* 白色加载层几何图形 */
+.geometric-shapes-white {
+  width: 100%;
+  height: 100%;
+}
+
+.circle-shape-white {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(75, 108, 183, 0.08) 0%,
+    rgba(75, 108, 183, 0.02) 70%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.circle-white-1 {
+  width: 350px;
+  height: 350px;
+  top: 5%;
+  right: 10%;
+  animation: float 22s ease-in-out infinite;
+}
+
+.circle-white-2 {
+  width: 250px;
+  height: 250px;
+  bottom: 8%;
+  left: 12%;
+  animation: float 28s ease-in-out infinite reverse;
+}
+
+.hexagon-shape {
+  position: absolute;
+  width: 200px;
+  height: 115px;
+  background: linear-gradient(135deg, rgba(75, 108, 183, 0.05) 0%, rgba(75, 108, 183, 0.01) 100%);
+  position: relative;
+}
+
+.hexagon-shape:before,
+.hexagon-shape:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+}
+
+.hexagon-shape:before {
+  bottom: 100%;
+  border-bottom: 57.5px solid rgba(75, 108, 183, 0.05);
+}
+
+.hexagon-shape:after {
+  top: 100%;
+  border-top: 57.5px solid rgba(75, 108, 183, 0.05);
+}
+
+.hexagon-1 {
+  top: 25%;
+  left: 20%;
+  animation: float-rotate 32s ease-in-out infinite;
+}
+
+.triangle-shape {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  border-bottom: 130px solid rgba(75, 108, 183, 0.04);
+}
+
+.triangle-1 {
+  bottom: 15%;
+  right: 25%;
+  animation: float-rotate 26s ease-in-out infinite reverse;
+}
+
 @keyframes float {
   0%,
   100% {
@@ -362,6 +501,22 @@ onMounted(() => {
   }
   75% {
     transform: translateY(15px) rotate(-2deg);
+  }
+}
+
+@keyframes float-rotate {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-15px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(15px) rotate(-5deg);
   }
 }
 

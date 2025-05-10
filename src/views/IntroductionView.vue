@@ -1,6 +1,6 @@
 <template>
   <AnimationView class="fixed top-0 left-0 w-screen h-screen m-0 p-0 overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-full m-0 p-0 overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full m-0 p-0 overflow-hidden min-w-[40vw]">
       <!-- 页面容器 -->
       <div
         class="absolute inset-0 flex transition-transform"
@@ -11,24 +11,28 @@
       >
         <!-- 第一页 - 数据页 -->
         <div class="page flex-shrink-0 w-full h-full flex">
-          <!-- 左侧区域 - 20%宽度 -->
+          <!-- 左侧区域 - 在小屏幕上增加宽度 -->
           <div
-            class="w-[20%] h-full bg-[#213d65] flex flex-col items-center justify-center text-white relative left-section-bg"
+            class="w-[25%] sm:w-[22%] md:w-[20%] h-full bg-[#213d65] flex flex-col items-center justify-center text-white relative left-section-bg"
           >
             <div class="flex flex-col items-center">
-              <div class="text-5xl from-neutral-400 writing-vertical-lr mb-8">关于·吉大</div>
+              <div
+                class="text-3xl sm:text-4xl md:text-5xl from-neutral-400 writing-vertical-lr-responsive mb-8"
+              >
+                关于·吉大
+              </div>
             </div>
             <div
-              class="writing-vertical-lr text-amber-50 absolute right-24"
-              style="letter-spacing: 0.5em"
+              class="writing-vertical-lr-responsive text-amber-50 absolute right-8 sm:right-16 md:right-24 text-sm sm:text-base md:text-lg"
+              style="letter-spacing: 0.2em"
             >
               求实创新，励志图强
             </div>
           </div>
 
-          <!-- 右侧区域 - 80%宽度 - 网格布局 -->
+          <!-- 右侧区域 - 响应式网格布局 -->
           <div
-            class="w-[80%] h-full grid grid-cols-6 grid-rows-4 right-section-bg bg-[#446294] perspective-1000"
+            class="w-[75%] sm:w-[78%] md:w-[80%] h-full grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 grid-rows-4 right-section-bg bg-[#446294] perspective-1000"
           >
             <!-- 第一行 -->
             <div
@@ -226,40 +230,48 @@
             <div
               :class="['grid-cell', 'grid-color-1', { 'animate-grid-rotate': currentPage === 0 }]"
               style="animation-delay: 1100ms"
+            ></div>
+            <div
+              :class="['grid-cell', 'grid-color-2', { 'animate-grid-rotate': currentPage === 0 }]"
+              style="animation-delay: 1150ms"
             >
               <div class="grid-cell-content">
                 <div class="grid-cell-number">821.8</div>
                 <div class="grid-cell-text">图书馆藏书(万册)</div>
               </div>
             </div>
-            <div
-              :class="['grid-cell', 'grid-color-2', { 'animate-grid-rotate': currentPage === 0 }]"
-              style="animation-delay: 1150ms"
-            ></div>
           </div>
         </div>
 
         <!-- 第二页 - 人物页 -->
         <div class="page flex-shrink-0 w-full h-full flex">
-          <!-- 左侧区域 - 20%宽度，直接将背景类应用在主元素上 -->
+          <!-- 左侧区域 - 在小屏幕上增加宽度 -->
           <div
-            class="w-[20%] h-full bg-[#2b27276f] flex flex-col items-center justify-center text-white relative second-page-left-bg"
+            class="w-[25%] sm:w-[22%] md:w-[20%] h-full bg-[#2b27276f] flex flex-col items-center justify-center text-white relative second-page-left-bg"
           >
             <div class="flex flex-col items-center">
-              <div class="text-5xl from-neutral-400 writing-vertical-lr mb-8">人物·吉大</div>
+              <div
+                class="text-3xl sm:text-4xl md:text-5xl from-neutral-400 writing-vertical-lr-responsive mb-8"
+              >
+                人物·吉大
+              </div>
             </div>
             <div
-              class="writing-vertical-lr text-amber-50 absolute right-24"
-              style="letter-spacing: 0.5em"
+              class="writing-vertical-lr-responsive text-amber-50 absolute right-8 sm:right-16 md:right-24 text-sm sm:text-base md:text-lg"
+              style="letter-spacing: 0.2em"
             >
               桃李芬芳，人才辈出
             </div>
           </div>
 
-          <!-- 右侧区域 - 80%宽度 - 直接将背景类应用在主元素上 -->
-          <div class="w-[80%] h-full second-page-right-bg bg-[#554a48] perspective-1000">
-            <!-- 卡片容器 -->
-            <div class="p-8 grid grid-cols-3 grid-rows-2 gap-12 h-full pb-24">
+          <!-- 右侧区域 - 响应式卡片网格 -->
+          <div
+            class="w-[75%] sm:w-[78%] md:w-[80%] h-full second-page-right-bg bg-[#554a48] perspective-1000"
+          >
+            <!-- 卡片容器 - 在小屏幕上减少列数 -->
+            <div
+              class="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-auto sm:grid-rows-2 gap-8 sm:gap-10 md:gap-12 h-full pb-24"
+            >
               <!-- 人物卡片 - 按时间递减排序 -->
               <!-- 张希 - 第一个位置 -->
               <div
@@ -416,43 +428,43 @@
                   </div>
                 </div>
               </div>
-
-              <!-- 更换右下角按钮为文字按钮 -->
-              <router-link
-                to="/more-principals"
-                class="absolute bottom-16 right-8 bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-lg shadow-lg transition-colors duration-300 text-lg font-medium"
-              >
-                了解更多
-              </router-link>
             </div>
           </div>
         </div>
 
         <!-- 第三页 - 史况页 -->
-        <div class="page flex-shrink-0 w-full h-full bg-yellow-50 flex">
-          <!-- 左侧区域 - 20%宽度 -->
+        <div class="page flex-shrink-0 w-full h-full bg-yellow-50 flex flex-col md:flex-row">
+          <!-- 左侧区域 - 在小屏幕上变为顶部区域 -->
           <div
-            class="w-[20%] h-full bg-yellow-50 flex flex-col items-center justify-center text-black relative"
+            class="w-full md:w-[20%] h-[20%] md:h-full bg-yellow-50 flex flex-row md:flex-col items-center justify-center text-black relative"
           >
-            <div class="flex flex-col items-center">
-              <div class="text-5xl font-normal writing-vertical-lr mb-8 text-gray-800">
+            <div class="flex flex-row md:flex-col items-center">
+              <div
+                class="text-3xl sm:text-4xl md:text-5xl font-normal writing-mode-mixed md:writing-vertical-lr mb-0 md:mb-8 mr-4 md:mr-0 text-gray-800"
+              >
                 史况·吉大
               </div>
             </div>
             <div
-              class="writing-vertical-lr text-gray-600 absolute right-24"
-              style="letter-spacing: 0.5em"
+              class="writing-mode-mixed md:writing-vertical-lr text-gray-600 md:absolute md:right-24"
+              style="letter-spacing: 0.3em"
             >
               百年沧桑，薪火相传
             </div>
           </div>
 
-          <!-- 中间区域 - 50%宽度 -->
-          <div class="w-[50%] h-full bg-yellow-50 p-10 flex flex-col justify-center">
-            <div class="text-4xl font-bold text-gray-800 mb-8">吉大·史苑</div>
+          <!-- 中间区域 -->
+          <div
+            class="w-full md:w-[50%] h-[55%] md:h-full bg-yellow-50 p-4 sm:p-6 md:p-10 flex flex-col justify-center"
+          >
+            <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 md:mb-8">
+              吉大·史苑
+            </div>
             <div class="relative">
               <!-- 文字内容区域，固定高度，添加垂直滚动条 -->
-              <div class="h-[320px] pr-8 overflow-y-auto scrollbar-hide space-y-6 text-gray-700">
+              <div
+                class="h-[180px] sm:h-[240px] md:h-[320px] pr-4 md:pr-8 overflow-y-auto scrollbar-hide space-y-4 md:space-y-6 text-gray-700"
+              >
                 <p class="text-lg text-indent-2em">
                   吉林大学始建于1946年，前身为1937年成立的伪满洲国国立大学，后更名为东北行政学院。1950年，东北人民政府将原东北行政学院与原东北大学文法学院合并组建成立吉林大学。
                 </p>
@@ -481,23 +493,27 @@
             </div>
           </div>
 
-          <!-- 右侧区域 - 30%宽度，放置两张图片 -->
-          <div class="w-[30%] h-full bg-yellow-50 flex flex-col justify-center items-center p-8">
-            <div class="h-[45%] w-full mb-4 overflow-hidden rounded-lg shadow-lg">
+          <!-- 右侧区域 - 在小屏幕上变为底部区域 -->
+          <div
+            class="w-full md:w-[30%] h-[25%] md:h-full bg-yellow-50 flex flex-row md:flex-col justify-center items-center p-4 sm:p-6 md:p-8"
+          >
+            <div
+              class="h-full w-[45%] md:h-[45%] md:w-full mr-4 md:mr-0 md:mb-4 overflow-hidden rounded-lg shadow-lg"
+            >
               <img
                 src="../assets/imgs/introductionView/jlu-introduction5.png"
                 alt="伪满洲国皇宫"
                 class="w-full h-full object-cover"
               />
             </div>
-            <div class="h-[45%] w-full overflow-hidden rounded-lg shadow-lg">
+            <div class="h-full w-[45%] md:h-[45%] md:w-full overflow-hidden rounded-lg shadow-lg">
               <img
                 src="../assets/imgs/introductionView/jlu-introduction6.jpg"
                 alt="朝阳校区教学楼"
                 class="w-full h-full object-cover"
               />
             </div>
-            <div class="mt-3 ml-8 text-center text-gray-700">
+            <div class="hidden md:block mt-3 ml-0 md:ml-8 text-center text-gray-700">
               <p>伪满洲国皇宫，今朝阳校区教学楼</p>
             </div>
           </div>
@@ -505,27 +521,37 @@
 
         <!-- 第四页 - 校区页 -->
         <div class="page flex-shrink-0 w-full h-full flex">
-          <!-- 左侧区域 - 20%宽度 -->
+          <!-- 左侧区域 - 在小屏幕上增加宽度 -->
           <div
-            class="w-[20%] h-full flex flex-col bg-[#faeaea52] items-center justify-center text-white relative fourth-page-left-bg"
+            class="w-[25%] sm:w-[22%] md:w-[20%] h-full flex flex-col bg-[#faeaea52] items-center justify-center text-white relative fourth-page-left-bg"
           >
-            <div class="flex flex-col items-center">
-              <div class="text-5xl from-neutral-400 writing-vertical-lr mb-8 mr-24">吉大·校区</div>
+            <!-- 添加深色半透明遮罩层 -->
+            <div class="absolute inset-0 bg-black/50"></div>
+
+            <div class="flex flex-col items-center relative z-10">
+              <div
+                class="text-3xl sm:text-4xl md:text-5xl from-neutral-400 writing-vertical-lr-responsive mb-8 mr-6 sm:mr-10 md:mr-16"
+              >
+                吉大·校区
+              </div>
             </div>
             <div
-              class="writing-vertical-lr text-gray-200 absolute right-32"
-              style="letter-spacing: 0.5em"
+              class="writing-vertical-lr-responsive text-gray-200 absolute right-8 sm:right-16 md:right-32 z-10 text-sm sm:text-base md:text-lg"
+              style="letter-spacing: 0.2em"
             >
-              美丽的长春美丽的长春市坐落在吉林大学校内
+              美丽的长春市坐落在吉林大学校内
             </div>
           </div>
 
-          <!-- 右侧区域 - 80%宽度 -->
-          <div class="w-[80%] h-full fourth-page-right-bg bg-[#e4eff93e] perspective-1000">
-            <!-- 卡片容器 -->
-            <div class="p-8 grid grid-cols-3 grid-rows-2 gap-12 h-full pb-24">
+          <!-- 右侧区域 - 响应式卡片网格 -->
+          <div
+            class="w-[75%] sm:w-[78%] md:w-[80%] h-full fourth-page-right-bg bg-[#e4eff93e] perspective-1000"
+          >
+            <!-- 卡片容器 - 在小屏幕上减少列数 -->
+            <div
+              class="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-rows-auto sm:grid-rows-2 gap-8 sm:gap-10 md:gap-12 h-full pb-24"
+            >
               <!-- 校区卡片 -->
-              <!-- 南岭校区 -->
               <div
                 class="campus-card flex items-center justify-center"
                 :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
@@ -539,19 +565,17 @@
                       class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
                     ></div>
                     <img
-                      src="../assets/imgs/introductionView/jlu-introduction5.png"
-                      alt="南岭校区"
+                      src="../assets/imgs/introductionView/nanqu.jpg"
+                      alt="前卫校区"
                       class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
-                    <div class="text-2xl font-bold">南岭校区</div>
-                    <div class="text-sm opacity-80">中心校区</div>
+                    <div class="text-2xl font-bold">前卫校区</div>
                   </div>
                 </div>
               </div>
 
-              <!-- 朝阳校区 -->
               <div
                 class="campus-card flex items-center justify-center"
                 :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
@@ -565,19 +589,17 @@
                       class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
                     ></div>
                     <img
-                      src="../assets/imgs/introductionView/jlu-introduction6.jpg"
-                      alt="朝阳校区"
+                      src="../assets/imgs/introductionView/nanhu.jpg"
+                      alt="南湖校区"
                       class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
-                    <div class="text-2xl font-bold">朝阳校区</div>
-                    <div class="text-sm opacity-80">人文社科</div>
+                    <div class="text-2xl font-bold">南湖校区</div>
                   </div>
                 </div>
               </div>
 
-              <!-- 前卫校区 -->
               <div
                 class="campus-card flex items-center justify-center"
                 :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
@@ -591,14 +613,13 @@
                       class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
                     ></div>
                     <img
-                      src="../assets/imgs/introductionView/jlu-introduction1.jpg"
-                      alt="前卫校区"
+                      src="../assets/imgs/introductionView/nanling.jpg"
+                      alt="南岭校区"
                       class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
-                    <div class="text-2xl font-bold">前卫校区</div>
-                    <div class="text-sm opacity-80">工科理科</div>
+                    <div class="text-2xl font-bold">南岭校区</div>
                   </div>
                 </div>
               </div>
@@ -617,14 +638,13 @@
                       class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
                     ></div>
                     <img
-                      src="../assets/imgs/introductionView/jlu-introduction2.png"
+                      src="../assets/imgs/introductionView/xinming.jpg"
                       alt="新民校区"
                       class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
                     <div class="text-2xl font-bold">新民校区</div>
-                    <div class="text-sm opacity-80">经济管理</div>
                   </div>
                 </div>
               </div>
@@ -643,19 +663,17 @@
                       class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
                     ></div>
                     <img
-                      src="../assets/imgs/introductionView/jlu-introduction3.png"
+                      src="../assets/imgs/introductionView/heping.png"
                       alt="和平校区"
                       class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
                     <div class="text-2xl font-bold">和平校区</div>
-                    <div class="text-sm opacity-80">医学部</div>
                   </div>
                 </div>
               </div>
 
-              <!-- 白求恩校区 -->
               <div
                 class="campus-card flex items-center justify-center"
                 :class="{ 'animate-grid-rotate': currentPage === 3 && !isFromExternalPage }"
@@ -669,25 +687,16 @@
                       class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"
                     ></div>
                     <img
-                      src="../assets/imgs/introductionView/jlu-introduction4.jpg"
-                      alt="白求恩校区"
+                      src="../assets/imgs/introductionView/chaoyang.jpg"
+                      alt="朝阳校区"
                       class="h-full w-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
                   <div class="h-1/4 p-3 text-white flex flex-col justify-center">
-                    <div class="text-2xl font-bold">白求恩校区</div>
-                    <div class="text-sm opacity-80">医学部</div>
+                    <div class="text-2xl font-bold">朝阳校区</div>
                   </div>
                 </div>
               </div>
-
-              <!-- 了解更多按钮 -->
-              <router-link
-                to="/more-campus"
-                class="absolute bottom-8 right-8 bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg transition-colors duration-300 text-lg font-medium"
-              >
-                了解更多
-              </router-link>
             </div>
           </div>
         </div>
@@ -700,7 +709,7 @@
 
       <!-- 底部刻度尺进度条 -->
       <div
-        class="progress-bar fixed bottom-12 left-1/2 transform -translate-x-1/2 w-[55%] sm:w-[65%] md:w-[55%] flex flex-col items-center z-20"
+        class="progress-bar fixed bottom-12 left-1/2 transform -translate-x-1/2 w-[80%] sm:w-[70%] md:w-[55%] flex flex-col items-center z-20"
       >
         <!-- 刻度尺线 -->
         <div class="relative w-full h-0.5 bg-white/80">
@@ -822,12 +831,30 @@
 
       <!-- 右侧箭头 -->
       <div
-        class="next-button fixed right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-all duration-300 hover:scale-110 z-20"
+        class="next-button fixed right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-all duration-300 hover:scale-110 z-20"
         @click="nextPage"
         v-show="currentPage < 3"
       >
-        <i class="pi pi-arrow-right text-xl sm:text-2xl text-blue-600"></i>
+        <i class="pi pi-arrow-right text-lg sm:text-xl md:text-2xl text-blue-600"></i>
       </div>
+
+      <!-- 独立的"了解更多"按钮 - 人物页 -->
+      <router-link
+        v-if="currentPage === 1"
+        to="/more-principals"
+        class="fixed bottom-16 right-8 bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-lg shadow-lg transition-colors duration-300 text-lg font-medium z-50"
+      >
+        了解更多
+      </router-link>
+
+      <!-- 独立的"了解更多"按钮 - 校区页 -->
+      <router-link
+        v-if="currentPage === 3"
+        to="/more-campus"
+        class="fixed bottom-8 right-8 bg-blue-500 hover:bg-blue-700 text-white px-6 py-3 rounded-lg shadow-lg transition-colors duration-300 text-lg font-medium z-50"
+      >
+        了解更多
+      </router-link>
     </div>
   </AnimationView>
 </template>
@@ -1018,6 +1045,43 @@ onBeforeUnmount(() => {
   text-orientation: upright;
 }
 
+/* 响应式垂直文字 */
+.writing-vertical-lr-responsive {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+}
+
+/* 小屏幕下垂直文字间距调整 */
+@media (max-width: 640px) {
+  .writing-vertical-lr-responsive {
+    letter-spacing: 0.1em !important;
+    line-height: 1.2;
+  }
+}
+
+@media (max-width: 480px) {
+  .writing-vertical-lr-responsive {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    letter-spacing: normal !important;
+  }
+}
+
+/* 混合书写模式，在小屏幕上横向，大屏幕上纵向 */
+@media (max-width: 768px) {
+  .writing-mode-mixed {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
+}
+
+@media (min-width: 769px) {
+  .writing-mode-mixed {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
+}
+
 .left-section-bg {
   background-image: url('../assets/imgs/introductionView/jlu-introduction2.png');
   background-size: cover;
@@ -1058,5 +1122,14 @@ onBeforeUnmount(() => {
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;
+}
+
+/* 设置滚动条样式 */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 </style>

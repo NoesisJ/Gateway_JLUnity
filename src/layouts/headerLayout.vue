@@ -20,14 +20,11 @@
     <div
       class="hidden lg:flex menu-container space-x-6 xl:space-x-12 text-base xl:text-xl font-medium pr-4 xl:pr-32"
     >
-      <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">吉大概况</div>
-      <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">校园导览</div>
-      <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">学术资源</div>
-      <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">校园生活</div>
-      <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">
-        <router-link to="/scenery">四季美景</router-link>
-      </div>
-      <div class="menu-item cursor-pointer hover:text-blue-400 transition-colors">吉大周边</div>
+      <router-link to="/introduction" class="desktop-menu-item">吉大概况</router-link>
+      <router-link to="/campus" class="desktop-menu-item">校园导览</router-link>
+      <router-link to="/academicresources" class="desktop-menu-item">学术资源</router-link>
+      <router-link to="/culture" class="desktop-menu-item">校园生活</router-link>
+      <router-link to="/scenery" class="desktop-menu-item">四季美景</router-link>
     </div>
 
     <div class="flex items-center">
@@ -55,24 +52,11 @@
     style="transform: translateY(0)"
   >
     <div class="flex flex-col py-4">
-      <div class="menu-item py-3 px-8 cursor-pointer hover:bg-gray-100 transition-colors">
-        吉大概况
-      </div>
-      <div class="menu-item py-3 px-8 cursor-pointer hover:bg-gray-100 transition-colors">
-        校园导览
-      </div>
-      <div class="menu-item py-3 px-8 cursor-pointer hover:bg-gray-100 transition-colors">
-        学术资源
-      </div>
-      <div class="menu-item py-3 px-8 cursor-pointer hover:bg-gray-100 transition-colors">
-        校园生活
-      </div>
-      <div class="menu-item py-3 px-8 cursor-pointer hover:bg-gray-100 transition-colors">
-        <router-link to="/scenery">四季美景</router-link>
-      </div>
-      <div class="menu-item py-3 px-8 cursor-pointer hover:bg-gray-100 transition-colors">
-        吉大周边
-      </div>
+      <router-link to="/introduction" class="mobile-menu-item">吉大概况</router-link>
+      <router-link to="/campus" class="mobile-menu-item">校园导览</router-link>
+      <router-link to="/academicresources" class="mobile-menu-item">学术资源</router-link>
+      <router-link to="/culture" class="mobile-menu-item">校园生活</router-link>
+      <router-link to="/scenery" class="mobile-menu-item">四季美景</router-link>
 
       <!-- 移动端图标 -->
       <div class="flex justify-center space-x-8 py-4 md:hidden">
@@ -130,5 +114,35 @@ const toggleMobileMenu = () => {
   to {
     transform: translateY(-100%);
   }
+}
+
+/* 桌面端菜单项样式 */
+.desktop-menu-item {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition-property: color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.desktop-menu-item:hover {
+  color: rgba(96, 165, 250, 1); /* hover:text-blue-400 */
+}
+
+/* 移动端菜单项样式 */
+.mobile-menu-item {
+  padding: 0.75rem 2rem; /* py-3 px-8 */
+  cursor: pointer;
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-menu-item:hover {
+  background-color: rgba(243, 244, 246, 1); /* hover:bg-gray-100 */
 }
 </style>
