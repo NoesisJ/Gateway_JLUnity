@@ -56,7 +56,7 @@
       <section class="navigation-section">
         <h2>校园导航</h2>
         <div class="navigation-grid">
-          <router-link to="/map/main" class="nav-card">
+          <router-link to="/map" class="nav-card">
             <div class="nav-icon">🗺️</div>
             <h3>校区总览</h3>
             <p>查看所有校区分布</p>
