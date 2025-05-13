@@ -124,7 +124,7 @@ const router = createRouter({
       component: () => import('../views/culture/CultureHome.vue'),
     },
     {
-      path: '/culture/campus',
+      path: '/culture/heritage',
       name: 'CampusCulture',
       component: () => import('../views/culture/CampusCulture.vue'),
     },
@@ -139,7 +139,7 @@ const router = createRouter({
       component: () => import('../views/culture/CampusServices.vue'),
     },
     {
-      path: '/culture',
+      path: '/culture/clubs',
       name: 'StudentClubs',
       component: () => import('../views/culture/StudentClubs.vue'),
     },
