@@ -1,4 +1,3 @@
-
 <template>
   <div class="campus-map">
     <header class="hero-section">
@@ -11,15 +10,15 @@
     <main class="content-section">
       <article class="map-container">
         <h2 class="section-title">吉林大学校区分布图</h2>
-        
+
         <div class="interactive-map">
-          <img src="../../assets/imgs/map/jlu-map.jpg" alt="吉林大学校区分布图" class="base-map">
+          <img src="../../assets/imgs/map/jlu-map.jpg" alt="吉林大学校区分布图" class="base-map" />
           <div class="map-markers">
-            <div class="marker" style="top: 25%; left: 30%;" @click="showInfo('center')">
+            <div class="marker" style="top: 25%; left: 30%" @click="showInfo('center')">
               <div class="marker-dot"></div>
               <div class="marker-label">中心校区</div>
             </div>
-            <div class="marker" style="top: 40%; left: 60%;" @click="showInfo('south')">
+            <div class="marker" style="top: 40%; left: 60%" @click="showInfo('south')">
               <div class="marker-dot"></div>
               <div class="marker-label">南岭校区</div>
             </div>
@@ -31,7 +30,7 @@
           <h3>校区图例</h3>
           <ul>
             <li v-for="campus in campuses" :key="campus.id" @click="showInfo(campus.id)">
-              <span class="legend-color" :style="{backgroundColor: campus.color}"></span>
+              <span class="legend-color" :style="{ backgroundColor: campus.color }"></span>
               {{ campus.name }}
             </li>
           </ul>
@@ -66,29 +65,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 interface CampusInfo {
-  id: string;
-  name: string;
-  description: string;
-  color: string;
-  location: string;
-  colleges: string;
-  transport: string;
-  link: string;
+  id: string
+  name: string
+  description: string
+  color: string
+  location: string
+  colleges: string
+  transport: string
+  link: string
 }
 
 const campuses: CampusInfo[] = [
   {
     id: 'center',
     name: '中心校区',
-    description: '吉林大学的主校区，包含行政中心、图书馆和多个文理科院系。标志性建筑有鼎新楼和清湖。',
+    description:
+      '吉林大学的主校区，包含行政中心、图书馆和多个文理科院系。标志性建筑有鼎新楼和清湖。',
     color: '#3182CE',
     location: '长春市朝阳区前进大街2699号',
     colleges: '文学院、哲学社会学院、数学学院等',
     transport: '公交315路、13路、222路',
-    link: '/campus/center'
+    link: '/map/main',
   },
   {
     id: 'south',
@@ -98,16 +98,16 @@ const campuses: CampusInfo[] = [
     location: '长春市南关区人民大街5988号',
     colleges: '机械与航空航天工程学院、汽车工程学院等',
     transport: '公交6路、66路、306路',
-    link: '/campus/south'
+    link: '/map/south',
   },
   // 其他校区数据...
-];
+]
 
-const currentCampus = ref<CampusInfo | null>(null);
+const currentCampus = ref<CampusInfo | null>(null)
 
 const showInfo = (id: string) => {
-  currentCampus.value = campuses.find(c => c.id === id) || null;
-};
+  currentCampus.value = campuses.find((c) => c.id === id) || null
+}
 </script>
 
 <style scoped>
@@ -193,7 +193,7 @@ const showInfo = (id: string) => {
 .marker-dot {
   width: 12px;
   height: 12px;
-  background-color: #E53E3E;
+  background-color: #e53e3e;
   border-radius: 50%;
   border: 2px solid white;
   transition: transform 0.3s ease;
@@ -209,7 +209,7 @@ const showInfo = (id: string) => {
   border-radius: 4px;
   font-size: 0.9em;
   font-weight: bold;
-  color: #2D3748;
+  color: #2d3748;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   opacity: 0;
   transition: all 0.3s ease;
@@ -217,7 +217,7 @@ const showInfo = (id: string) => {
 }
 
 .map-legend {
-  background-color: #F7FAFC;
+  background-color: #f7fafc;
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 30px;
@@ -226,7 +226,7 @@ const showInfo = (id: string) => {
 
 .map-legend h3 {
   margin-top: 0;
-  color: #2D3748;
+  color: #2d3748;
   font-size: 1.3em;
   margin-bottom: 15px;
 }
@@ -250,7 +250,7 @@ const showInfo = (id: string) => {
 }
 
 .map-legend li:hover {
-  background-color: #EDF2F7;
+  background-color: #edf2f7;
 }
 
 .legend-color {
@@ -262,21 +262,21 @@ const showInfo = (id: string) => {
 }
 
 .campus-info {
-  background-color: #EBF8FF;
+  background-color: #ebf8ff;
   padding: 25px;
   border-radius: 10px;
   margin-top: 20px;
-  border-left: 4px solid #3182CE;
+  border-left: 4px solid #3182ce;
 }
 
 .campus-info h3 {
   margin-top: 0;
-  color: #2B6CB0;
+  color: #2b6cb0;
   font-size: 1.5em;
 }
 
 .campus-info p {
-  color: #4A5568;
+  color: #4a5568;
   line-height: 1.6;
 }
 
@@ -303,31 +303,39 @@ const showInfo = (id: string) => {
 
 .detail-link {
   display: inline-block;
-  color: #3182CE;
+  color: #3182ce;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .detail-link:hover {
-  color: #2C5282;
+  color: #2c5282;
   text-decoration: underline;
 }
 
 .map-footer {
   text-align: center;
   padding: 40px 20px;
-  background-color: #2D3748;
-  color: #F7FAFC;
+  background-color: #2d3748;
+  color: #f7fafc;
   font-size: 0.95em;
   margin-top: 50px;
 }
 
 @media (max-width: 768px) {
-  .hero-section { min-height: 60vh; }
-  .main-title { font-size: 2.6em; }
-  .subtitle { font-size: 1.2em; }
-  .section-title { font-size: 2em; }
+  .hero-section {
+    min-height: 60vh;
+  }
+  .main-title {
+    font-size: 2.6em;
+  }
+  .subtitle {
+    font-size: 1.2em;
+  }
+  .section-title {
+    font-size: 2em;
+  }
   .map-legend ul {
     flex-direction: column;
   }
@@ -338,10 +346,22 @@ const showInfo = (id: string) => {
     min-height: 50vh;
     padding: 30px 15px;
   }
-  .main-title { font-size: 2.1em; }
-  .subtitle { font-size: 1.05em; }
-  .content-section { padding: 30px 15px; }
-  .section-title { font-size: 1.7em; margin-bottom: 30px; }
-  .map-footer { padding: 30px 15px; margin-top: 40px; }
+  .main-title {
+    font-size: 2.1em;
+  }
+  .subtitle {
+    font-size: 1.05em;
+  }
+  .content-section {
+    padding: 30px 15px;
+  }
+  .section-title {
+    font-size: 1.7em;
+    margin-bottom: 30px;
+  }
+  .map-footer {
+    padding: 30px 15px;
+    margin-top: 40px;
+  }
 }
 </style>

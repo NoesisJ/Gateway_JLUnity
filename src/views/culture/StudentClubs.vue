@@ -2,7 +2,7 @@
   <div class="student-clubs-simple">
     <!-- 顶部横幅区域 - 需要替换为吉林大学学生活动图片 -->
     <div class="banner">
-      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学社团活动">
+      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学社团活动" />
       <div class="banner-text">
         <h1>吉林大学学生社团</h1>
         <p>探索兴趣 · 结交伙伴 · 丰富生活</p>
@@ -13,8 +13,8 @@
     <div class="club-categories">
       <h2><i class="icon-group"></i> 热门社团</h2>
       <div class="category-tabs">
-        <div 
-          v-for="category in categories" 
+        <div
+          v-for="category in categories"
           :key="category.value"
           class="category-tab"
           :style="{ backgroundColor: getCategoryColor(category.value) }"
@@ -36,7 +36,7 @@
           <div class="club-card">
             <div class="club-image">
               <!-- 需要替换为机器人社团相关图片 -->
-              <img src="../../assets/imgs/culturehome/robot.jpg" alt="机器人创新协会">
+              <img src="../../assets/imgs/culturehome/robot.jpg" alt="机器人创新协会" />
               <span class="member-count"><i class="icon-user"></i> 128人</span>
             </div>
             <div class="club-content">
@@ -51,11 +51,11 @@
               </div>
             </div>
           </div>
-          
+
           <div class="club-card">
             <div class="club-image">
               <!-- 需要替换为AI社团相关图片 -->
-              <img src="../../assets/imgs/culturehome/AI.jpg" alt="人工智能研究会">
+              <img src="../../assets/imgs/culturehome/AI.jpg" alt="人工智能研究会" />
               <span class="member-count"><i class="icon-user"></i> 215人</span>
             </div>
             <div class="club-content">
@@ -64,7 +64,9 @@
                 <span><i class="icon-calendar"></i> 成立于2018年</span>
                 <span><i class="icon-trophy"></i> 8个奖项</span>
               </div>
-              <p>探索人工智能前沿技术，组织机器学习、深度学习研讨会，与校内实验室合作开展AI项目研究...</p>
+              <p>
+                探索人工智能前沿技术，组织机器学习、深度学习研讨会，与校内实验室合作开展AI项目研究...
+              </p>
               <div class="club-activity">
                 <i class="icon-activity"></i> 近期活动: 机器学习实战训练营
               </div>
@@ -83,7 +85,7 @@
           <div class="club-card featured">
             <div class="club-image">
               <!-- 需要替换为创新创业社团相关图片 -->
-              <img src="../../assets/imgs/culturehome/inovation.jpg" alt="创新创业联盟">
+              <img src="../../assets/imgs/culturehome/inovation.jpg" alt="创新创业联盟" />
               <span class="member-count"><i class="icon-user"></i> 198人</span>
             </div>
             <div class="club-content">
@@ -93,9 +95,7 @@
                 <span><i class="icon-trophy"></i> 18个奖项</span>
               </div>
               <p>培育创新创业项目，提供创业指导与资源对接，孵化多个学生创业团队并获得投资...</p>
-              <div class="club-activity">
-                <i class="icon-activity"></i> 近期活动: 创业计划大赛
-              </div>
+              <div class="club-activity"><i class="icon-activity"></i> 近期活动: 创业计划大赛</div>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@
           <div class="club-card">
             <div class="club-image">
               <!-- 需要替换为音乐社团相关图片 -->
-              <img src="../../assets/imgs/culturehome/yinyue.jpg" alt="音乐协会">
+              <img src="../../assets/imgs/culturehome/yinyue.jpg" alt="音乐协会" />
               <span class="member-count"><i class="icon-user"></i> 156人</span>
             </div>
             <div class="club-content">
@@ -122,11 +122,11 @@
               <p>聚集音乐爱好者，组织各类音乐表演和比赛，定期举办校园音乐会...</p>
             </div>
           </div>
-          
+
           <div class="club-card">
             <div class="club-image">
               <!-- 需要替换为篮球社团相关图片 -->
-              <img src="../../assets/imgs/culturehome/basket.jpg" alt="篮球协会">
+              <img src="../../assets/imgs/culturehome/basket.jpg" alt="篮球协会" />
               <span class="member-count"><i class="icon-user"></i> 210人</span>
             </div>
             <div class="club-content">
@@ -145,20 +145,20 @@
     <div class="footer-slogan">
       <p>加入社团，开启你的精彩大学生活</p>
       <div class="slogan-image-container">
-      <!-- 需要替换为吉林大学社团活动集体照 -->
-      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学社团活动">
+        <!-- 需要替换为吉林大学社团活动集体照 -->
+        <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学社团活动" />
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const categories = [
   { value: 'academic', label: '学术科技' },
   { value: 'innovation', label: '创新创业' },
   { value: 'art', label: '文艺体育' },
   { value: 'science', label: '自然科学' },
-  { value: 'humanities', label: '人文社科' }
+  { value: 'humanities', label: '人文社科' },
 ]
 
 function getCategoryColor(category) {
@@ -169,7 +169,7 @@ function getCategoryColor(category) {
     medical: '#9b59b6',
     humanities: '#f39c12',
     innovation: '#1abc9c',
-    art: '#e91e63'
+    art: '#e91e63',
   }
   return colors[category] || '#95a5a6'
 }
@@ -393,31 +393,47 @@ function getCategoryColor(category) {
   .banner {
     height: 300px;
   }
-  
+
   .banner-text h1 {
     font-size: 2rem;
   }
-  
+
   .banner-text p {
     font-size: 1.1rem;
   }
-  
+
   .club-cards {
     grid-template-columns: 1fr;
   }
-  
+
   .footer-slogan p {
     font-size: 1.2rem;
   }
 }
 
 /* 图标样式 - 实际项目中应使用真实的图标库 */
-.icon-group:before { content: "👥"; }
-.icon-science:before { content: "🔬"; }
-.icon-idea:before { content: "💡"; }
-.icon-art:before { content: "🎨"; }
-.icon-user:before { content: "👤"; }
-.icon-calendar:before { content: "📅"; }
-.icon-trophy:before { content: "🏆"; }
-.icon-activity:before { content: "🔔"; }
+.icon-group:before {
+  content: '👥';
+}
+.icon-science:before {
+  content: '🔬';
+}
+.icon-idea:before {
+  content: '💡';
+}
+.icon-art:before {
+  content: '🎨';
+}
+.icon-user:before {
+  content: '👤';
+}
+.icon-calendar:before {
+  content: '📅';
+}
+.icon-trophy:before {
+  content: '🏆';
+}
+.icon-activity:before {
+  content: '🔔';
+}
 </style>

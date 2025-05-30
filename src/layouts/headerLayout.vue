@@ -21,7 +21,7 @@
       class="hidden lg:flex menu-container space-x-6 xl:space-x-12 text-base xl:text-xl font-medium pr-4 xl:pr-32"
     >
       <router-link to="/introduction" class="desktop-menu-item">吉大概况</router-link>
-      <router-link to="/campus" class="desktop-menu-item">校园导览</router-link>
+      <router-link to="/map" class="desktop-menu-item">校园导览</router-link>
       <router-link to="/academicresources" class="desktop-menu-item">学术资源</router-link>
       <router-link to="/culture" class="desktop-menu-item">校园生活</router-link>
       <router-link to="/scenery" class="desktop-menu-item">四季美景</router-link>

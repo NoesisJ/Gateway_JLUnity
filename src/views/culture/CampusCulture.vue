@@ -2,7 +2,7 @@
   <div class="culture-heritage">
     <!-- 顶部横幅区域 - 需要替换为吉林大学历史文化图片 -->
     <div class="heritage-banner">
-      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学文化传承">
+      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学文化传承" />
       <div class="banner-overlay">
         <h1>吉林大学文化传承</h1>
         <p>百年学府的精神底蕴与文化积淀</p>
@@ -12,7 +12,7 @@
     <!-- 文化介绍区域 -->
     <div class="heritage-intro">
       <p class="intro-text">
-        从1946年东北行政学院走来，吉林大学在七十余载办学历程中，<br>
+        从1946年东北行政学院走来，吉林大学在七十余载办学历程中，<br />
         形成了独特的精神品格和文化传统，滋养着一代代吉大人。
       </p>
       <div class="divider-line"></div>
@@ -34,7 +34,7 @@
             </div>
             <div class="timeline-image">
               <!-- 需要替换为历史图片 -->
-              <img :src="item.image" :alt="item.event">
+              <img :src="item.image" :alt="item.event" />
             </div>
           </div>
         </div>
@@ -52,16 +52,14 @@
           <div class="motto-text">
             <h3>校训</h3>
             <p>"求实创新 励志图强"</p>
-            <div class="motto-desc">
-              2005年确定，体现了吉大人追求真理、勇于创新的精神品格
-            </div>
+            <div class="motto-desc">2005年确定，体现了吉大人追求真理、勇于创新的精神品格</div>
           </div>
           <div class="motto-image">
             <!-- 需要替换为校训石刻图片 -->
-            <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学校训">
+            <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学校训" />
           </div>
         </div>
-        
+
         <div class="values-grid">
           <div v-for="value in coreValues" :key="value.title" class="value-card">
             <div class="value-icon">
@@ -84,15 +82,13 @@
         <div v-for="item in traditions" :key="item.id" class="tradition-card">
           <div class="tradition-image">
             <!-- 需要替换为传统活动图片 -->
-            <img :src="item.image" :alt="item.title">
+            <img :src="item.image" :alt="item.title" />
             <div class="tradition-year">{{ item.year }}</div>
           </div>
           <div class="tradition-content">
             <h3>{{ item.title }}</h3>
             <p>{{ item.description }}</p>
-            <div class="tradition-highlight">
-              <i class="icon-star"></i> {{ item.highlight }}
-            </div>
+            <div class="tradition-highlight"><i class="icon-star"></i> {{ item.highlight }}</div>
           </div>
         </div>
       </div>
@@ -102,57 +98,57 @@
     <div class="heritage-footer">
       <p>传承吉大精神，续写百年华章</p>
       <div class="footer-image-container">
-      <!-- 需要替换为吉大校园全景图片 -->
-      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学">
+        <!-- 需要替换为吉大校园全景图片 -->
+        <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学" />
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const history = [
   {
     year: '1946',
     event: '东北行政学院成立',
     detail: '吉林大学前身，中国共产党在东北创建的第一所综合性大学',
-    image: "../../src/assets/imgs/culturehome/xingzheng.jpg"
+    image: '../../src/assets/imgs/culturehome/xingzheng.jpg',
   },
   {
     year: '1952',
     event: '全国院系调整',
     detail: '成为文理兼备的综合性大学，奠定学科发展基础',
-    image: "../../src/assets/imgs/culturehome/1952.jpg"
+    image: '../../src/assets/imgs/culturehome/1952.jpg',
   },
   {
     year: '2000',
     event: '五校合并组建新吉林大学',
     detail: '原吉林大学、吉林工业大学、白求恩医科大学、长春科技大学、长春邮电学院合并',
-    image: "../../src/assets/imgs/culturehome/wuxiaohebing.jpg"
+    image: '../../src/assets/imgs/culturehome/wuxiaohebing.jpg',
   },
   {
     year: '2017',
     event: '入选"双一流"建设高校',
     detail: '进入国家"世界一流大学和一流学科"建设行列',
-    image: "../../src/assets/imgs/culturehome/shuangyiliu.jpg"
-  }
+    image: '../../src/assets/imgs/culturehome/shuangyiliu.jpg',
+  },
 ]
 
 const coreValues = [
   {
     title: '崇尚科学 追求真理',
     description: '坚持学术立校，培养追求真理的科学精神',
-    icon: 'icon-science'
+    icon: 'icon-science',
   },
   {
     title: '开放包容 海纳百川',
     description: '兼收并蓄的学术胸怀，多元文化的交融共生',
-    icon: 'icon-inclusive'
+    icon: 'icon-inclusive',
   },
   {
     title: '知行合一 服务社会',
     description: '理论联系实际，知识服务国家发展',
-    icon: 'icon-practice'
-  }
+    icon: 'icon-practice',
+  },
 ]
 
 const traditions = [
@@ -162,7 +158,7 @@ const traditions = [
     year: '1958年创办',
     description: '每周举办的跨学科学术讲座，邀请校内外知名学者分享前沿成果',
     highlight: '延续60余年的学术传统',
-    image: '../../src/assets/imgs/culturehome/dingxin.jpg'
+    image: '../../src/assets/imgs/culturehome/dingxin.jpg',
   },
   {
     id: 2,
@@ -170,7 +166,7 @@ const traditions = [
     year: '1980年创办',
     description: '年度文艺汇演，展示学生艺术才华，丰富校园文化生活',
     highlight: '吉大最具影响力的文艺盛事',
-    image: '../../src/assets/imgs/culturehome/flower.jpg'
+    image: '../../src/assets/imgs/culturehome/flower.jpg',
   },
   {
     id: 3,
@@ -178,7 +174,7 @@ const traditions = [
     year: '2005年创办',
     description: '弘扬白求恩精神，培育医学生职业道德',
     highlight: '全国医学院校品牌活动',
-    image: '../../src/assets/imgs/culturehome/baiqiuen.jpg'
+    image: '../../src/assets/imgs/culturehome/baiqiuen.jpg',
   },
   {
     id: 4,
@@ -186,8 +182,8 @@ const traditions = [
     year: '1996年创办',
     description: '展示汽车科技成果，弘扬汽车工业文化',
     highlight: '国内高校首个汽车主题文化节',
-    image: '../../src/assets/imgs/culturehome/car.jpg'
-  }
+    image: '../../src/assets/imgs/culturehome/car.jpg',
+  },
 ]
 </script>
 
@@ -231,14 +227,14 @@ const traditions = [
   font-size: 3.5rem;
   margin-bottom: 20px;
   font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .banner-overlay p {
   font-size: 1.8rem;
   max-width: 800px;
   line-height: 1.5;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* 文化介绍 */
@@ -302,7 +298,7 @@ const traditions = [
 }
 
 .timeline:before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -355,7 +351,7 @@ const traditions = [
   height: 250px;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .timeline-image img {
@@ -387,7 +383,7 @@ const traditions = [
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   margin-bottom: 40px;
 }
 
@@ -438,7 +434,7 @@ const traditions = [
   background: white;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s;
 }
@@ -451,7 +447,7 @@ const traditions = [
   width: 70px;
   height: 70px;
   margin: 0 auto 20px;
-  background: rgba(52,152,219,0.1);
+  background: rgba(52, 152, 219, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -490,13 +486,13 @@ const traditions = [
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
 .tradition-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .tradition-image {
@@ -576,7 +572,7 @@ const traditions = [
   max-width: 1000px;
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* 响应式设计 */
@@ -584,15 +580,15 @@ const traditions = [
   .motto-card {
     flex-direction: column;
   }
-  
+
   .motto-image {
     width: 100%;
   }
-  
+
   .timeline-item {
     flex-direction: column;
   }
-  
+
   .timeline-year {
     margin-bottom: 15px;
   }
@@ -602,23 +598,23 @@ const traditions = [
   .heritage-banner {
     height: 400px;
   }
-  
+
   .banner-overlay h1 {
     font-size: 2.5rem;
   }
-  
+
   .banner-overlay p {
     font-size: 1.4rem;
   }
-  
+
   .intro-text {
     font-size: 1.2rem;
   }
-  
+
   .tradition-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .heritage-footer p {
     font-size: 1.5rem;
   }
@@ -628,26 +624,40 @@ const traditions = [
   .heritage-banner {
     height: 300px;
   }
-  
+
   .banner-overlay h1 {
     font-size: 2rem;
   }
-  
+
   .section-header h2 {
     font-size: 1.8rem;
   }
-  
+
   .motto-text p {
     font-size: 1.8rem;
   }
 }
 
 /* 图标样式 - 实际项目中应使用真实的图标库 */
-.icon-history:before { content: "📜"; }
-.icon-spirit:before { content: "💫"; }
-.icon-tradition:before { content: "🏛️"; }
-.icon-science:before { content: "🔬"; }
-.icon-inclusive:before { content: "🌍"; }
-.icon-practice:before { content: "🛠️"; }
-.icon-star:before { content: "⭐"; }
+.icon-history:before {
+  content: '📜';
+}
+.icon-spirit:before {
+  content: '💫';
+}
+.icon-tradition:before {
+  content: '🏛️';
+}
+.icon-science:before {
+  content: '🔬';
+}
+.icon-inclusive:before {
+  content: '🌍';
+}
+.icon-practice:before {
+  content: '🛠️';
+}
+.icon-star:before {
+  content: '⭐';
+}
 </style>

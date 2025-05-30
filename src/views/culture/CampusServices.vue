@@ -2,7 +2,7 @@
   <div class="campus-services-simple">
     <!-- 顶部横幅区域 - 需要替换为吉林大学校园生活图片 -->
     <div class="banner">
-      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学校园生活服务">
+      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学校园生活服务" />
       <div class="banner-text">
         <h1>吉林大学校园生活服务</h1>
         <p>一站式解决校园生活需求</p>
@@ -13,8 +13,8 @@
     <div class="service-categories">
       <h2><i class="icon-services"></i> 校园生活指南</h2>
       <div class="category-tabs">
-        <div 
-          v-for="category in serviceCategories" 
+        <div
+          v-for="category in serviceCategories"
           :key="category.value"
           class="category-tab"
           :style="{ backgroundColor: getCategoryColor(category.value) }"
@@ -46,7 +46,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="service-card">
             <div class="service-icon dorm-icon">
               <i class="icon-electric"></i>
@@ -70,14 +70,10 @@
           <p>美食天地 · 健康饮食 · 多样选择</p>
         </div>
         <div class="dining-grid">
-          <div 
-            v-for="canteen in canteens" 
-            :key="canteen.id" 
-            class="dining-card"
-          >
+          <div v-for="canteen in canteens" :key="canteen.id" class="dining-card">
             <div class="dining-image">
               <!-- 需要替换为食堂图片 -->
-              <img :src="canteen.image" :alt="canteen.name">
+              <img :src="canteen.image" :alt="canteen.name" />
               <span class="dining-hours"><i class="icon-clock"></i> {{ canteen.hours }}</span>
             </div>
             <div class="dining-info">
@@ -96,12 +92,7 @@
           <p>一键直达 · 高效办理 · 省时省力</p>
         </div>
         <div class="quick-links-grid">
-          <a 
-            v-for="link in quickLinks" 
-            :key="link.text" 
-            :href="link.url" 
-            class="quick-link"
-          >
+          <a v-for="link in quickLinks" :key="link.text" :href="link.url" class="quick-link">
             <div class="link-icon" :style="{ backgroundColor: getLinkColor(link.type) }">
               <i :class="link.icon"></i>
             </div>
@@ -118,21 +109,20 @@
     <div class="footer-slogan">
       <p>吉林大学 - 全方位服务学生校园生活</p>
       <div class="slogan-image-container">
-      <!-- 需要替换为校园服务场景图片 -->
-      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学校园服务">
+        <!-- 需要替换为校园服务场景图片 -->
+        <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学校园服务" />
+      </div>
     </div>
-  </div>
   </div>
 </template>
 
-
-<script setup>
+<script lang="ts" setup>
 const serviceCategories = [
   { value: 'dorm', label: '住宿服务' },
   { value: 'dining', label: '餐饮服务' },
   { value: 'transport', label: '交通服务' },
   { value: 'study', label: '学习服务' },
-  { value: 'health', label: '健康服务' }
+  { value: 'health', label: '健康服务' },
 ]
 
 const canteens = [
@@ -142,7 +132,7 @@ const canteens = [
     hours: '6:30-20:00',
     special: '东北风味、特色面食',
     location: '中心校区学生生活区',
-    image: "./../src/assets/imgs/culturehome/shenziyuan.jpg"
+    image: './../src/assets/imgs/culturehome/shenziyuan.jpg',
   },
   {
     id: 2,
@@ -150,7 +140,7 @@ const canteens = [
     hours: '6:30-21:00',
     special: '川湘风味、小火锅',
     location: '南湖校区湖畔',
-    image: "./../src/assets/imgs/culturehome/hupan.jpg"
+    image: './../src/assets/imgs/culturehome/hupan.jpg',
   },
   {
     id: 3,
@@ -158,68 +148,78 @@ const canteens = [
     hours: '6:30-22:00',
     special: '国际风味、西式餐点',
     location: '友谊会馆旁',
-    image: "./../src/assets/imgs/culturehome/liuxuesheng.jpg"
-  }
+    image: './../src/assets/imgs/culturehome/liuxuesheng.jpg',
+  },
 ]
 
-const quickLinks = [
-  { 
-    text: '校车时刻表', 
-    desc: '六校区班车实时查询', 
-    url: '#', 
+type ServiceType = 'dorm' | 'dining' | 'transport' | 'study' | 'health' | 'service'
+
+const quickLinks: Array<{
+  text: string
+  desc: string
+  url: string
+  icon: string
+  type: ServiceType
+}> = [
+  {
+    text: '校车时刻表',
+    desc: '六校区班车实时查询',
+    url: '#',
     icon: 'icon-bus',
-    type: 'transport'
+    type: 'transport',
   },
-  { 
-    text: '图书馆预约', 
-    desc: '座位、研讨间预约', 
-    url: '#', 
+  {
+    text: '图书馆预约',
+    desc: '座位、研讨间预约',
+    url: '#',
     icon: 'icon-library',
-    type: 'study'
+    type: 'study',
   },
-  { 
-    text: '校医院挂号', 
-    desc: '在线预约挂号服务', 
-    url: '#', 
+  {
+    text: '校医院挂号',
+    desc: '在线预约挂号服务',
+    url: '#',
     icon: 'icon-hospital',
-    type: 'health'
+    type: 'health',
   },
-  { 
-    text: '网络服务', 
-    desc: '校园网登录与报修', 
-    url: '#', 
+  {
+    text: '网络服务',
+    desc: '校园网登录与报修',
+    url: '#',
     icon: 'icon-network',
-    type: 'study'
+    type: 'study',
   },
-  { 
-    text: '失物招领', 
-    desc: '校园失物查询平台', 
-    url: '#', 
+  {
+    text: '失物招领',
+    desc: '校园失物查询平台',
+    url: '#',
     icon: 'icon-lost',
-    type: 'service'
+    type: 'service',
   },
-  { 
-    text: '活动场地预约', 
-    desc: '教室、场馆预约', 
-    url: '#', 
+  {
+    text: '活动场地预约',
+    desc: '教室、场馆预约',
+    url: '#',
     icon: 'icon-calendar',
-    type: 'service'
-  }
+    type: 'service',
+  },
 ]
 
-function getCategoryColor(category) {
+function getCategoryColor(
+  category: 'dorm' | 'dining' | 'transport' | 'study' | 'health' | 'service',
+) {
   const colors = {
     dorm: '#3498db',
     dining: '#e74c3c',
     transport: '#2ecc71',
     study: '#9b59b6',
     health: '#f39c12',
-    service: '#1abc9c'
+    service: '#1abc9c',
   }
   return colors[category] || '#95a5a6'
 }
 
-function getLinkColor(type) {
+function getLinkColor(type: 'dorm' | 'dining' | 'transport' | 'study' | 'health' | 'service') {
   return getCategoryColor(type)
 }
 </script>
@@ -542,51 +542,85 @@ function getLinkColor(type) {
   .banner {
     height: 300px;
   }
-  
+
   .banner-text h1 {
     font-size: 2rem;
   }
-  
+
   .banner-text p {
     font-size: 1.1rem;
   }
-  
+
   .service-cards,
   .dining-grid,
   .quick-links-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .service-card {
     flex-direction: column;
   }
-  
+
   .service-icon {
     width: 100%;
     height: 80px;
   }
-  
+
   .footer-slogan p {
     font-size: 1.2rem;
   }
 }
 
 /* 图标样式 - 实际项目中应使用真实的图标库 */
-.icon-services:before { content: "🏫"; }
-.icon-dorm:before { content: "🏠"; }
-.icon-dining:before { content: "🍽️"; }
-.icon-quick:before { content: "⚡"; }
-.icon-repair:before { content: "🔧"; }
-.icon-electric:before { content: "💡"; }
-.icon-phone:before { content: "📞"; }
-.icon-time:before { content: "⏰"; }
-.icon-clock:before { content: "🕒"; }
-.icon-star:before { content: "⭐"; }
-.icon-location:before { content: "📍"; }
-.icon-bus:before { content: "🚌"; }
-.icon-library:before { content: "📚"; }
-.icon-hospital:before { content: "🏥"; }
-.icon-network:before { content: "🌐"; }
-.icon-lost:before { content: "🔍"; }
-.icon-calendar:before { content: "📅"; }
+.icon-services:before {
+  content: '🏫';
+}
+.icon-dorm:before {
+  content: '🏠';
+}
+.icon-dining:before {
+  content: '🍽️';
+}
+.icon-quick:before {
+  content: '⚡';
+}
+.icon-repair:before {
+  content: '🔧';
+}
+.icon-electric:before {
+  content: '💡';
+}
+.icon-phone:before {
+  content: '📞';
+}
+.icon-time:before {
+  content: '⏰';
+}
+.icon-clock:before {
+  content: '🕒';
+}
+.icon-star:before {
+  content: '⭐';
+}
+.icon-location:before {
+  content: '📍';
+}
+.icon-bus:before {
+  content: '🚌';
+}
+.icon-library:before {
+  content: '📚';
+}
+.icon-hospital:before {
+  content: '🏥';
+}
+.icon-network:before {
+  content: '🌐';
+}
+.icon-lost:before {
+  content: '🔍';
+}
+.icon-calendar:before {
+  content: '📅';
+}
 </style>

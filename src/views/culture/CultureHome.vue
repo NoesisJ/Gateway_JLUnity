@@ -2,7 +2,7 @@
   <div class="culture-showcase">
     <!-- 顶部横幅区域 -->
     <div class="culture-banner">
-      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学文化生态">
+      <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学文化生态" />
       <div class="banner-overlay">
         <h1>吉大文化生态</h1>
         <p>在学术殿堂中感受人文温度</p>
@@ -12,7 +12,7 @@
     <!-- 文化介绍区域 -->
     <div class="culture-intro">
       <p class="intro-text">
-        吉林大学六校区共同构建的多元文化生态圈，<br>
+        吉林大学六校区共同构建的多元文化生态圈，<br />
         既有北国春城的开阔气象，又有百年学府的深厚底蕴。
       </p>
       <div class="divider-line"></div>
@@ -23,7 +23,7 @@
       <!-- 学术文化 -->
       <div class="feature-section">
         <div class="feature-image">
-          <img src="../../assets/imgs/culturehome/event-preview.jpg" alt="吉大学术文化">
+          <img src="../../assets/imgs/culturehome/event-preview.jpg" alt="吉大学术文化" />
         </div>
         <div class="feature-content">
           <h2><span class="icon academic-icon"></span> 学术文化</h2>
@@ -33,16 +33,14 @@
             <li>覆盖文理工医各学科领域</li>
             <li>师生互动交流的学术平台</li>
           </ul>
-          <router-link to="/culture/events" class="view-more">
-            查看更多学术活动 →
-          </router-link>
+          <router-link to="/culture/events" class="view-more"> 查看更多学术活动 → </router-link>
         </div>
       </div>
 
       <!-- 社团文化 -->
       <div class="feature-section reverse">
         <div class="feature-image">
-          <img src="../../assets/imgs/culturehome/club-preview.jpg" alt="吉大社团文化">
+          <img src="../../assets/imgs/culturehome/club-preview.jpg" alt="吉大社团文化" />
         </div>
         <div class="feature-content">
           <h2><span class="icon club-icon"></span> 社团文化</h2>
@@ -52,16 +50,14 @@
             <li>涵盖学术、文艺、体育等类别</li>
             <li>展示个性与才华的舞台</li>
           </ul>
-          <router-link to="/culture/clubs" class="view-more">
-            查看更多社团信息 →
-          </router-link>
+          <router-link to="/culture/clubs" class="view-more"> 查看更多社团信息 → </router-link>
         </div>
       </div>
 
       <!-- 生活服务 -->
       <div class="feature-section">
         <div class="feature-image">
-          <img src="../../assets/imgs/culturehome/rixin-lou.jpg" alt="吉大生活服务">
+          <img src="../../assets/imgs/culturehome/rixin-lou.jpg" alt="吉大生活服务" />
         </div>
         <div class="feature-content">
           <h2><span class="icon service-icon"></span> 生活服务</h2>
@@ -71,16 +67,14 @@
             <li>数字化校园生活平台</li>
             <li>全方位学生支持网络</li>
           </ul>
-          <router-link to="/culture/services" class="view-more">
-            查看更多服务信息 →
-          </router-link>
+          <router-link to="/culture/services" class="view-more"> 查看更多服务信息 → </router-link>
         </div>
       </div>
 
       <!-- 文化传承 -->
       <div class="feature-section reverse">
         <div class="feature-image">
-          <img src="../../assets/imgs/culturehome/heritage-preview.jpg" alt="吉大文化传承">
+          <img src="../../assets/imgs/culturehome/heritage-preview.jpg" alt="吉大文化传承" />
         </div>
         <div class="feature-content">
           <h2><span class="icon heritage-icon"></span> 文化传承</h2>
@@ -90,9 +84,7 @@
             <li>红色基因的精神传承</li>
             <li>独具特色的校园传统</li>
           </ul>
-          <router-link to="/culture/heritage" class="view-more">
-            查看更多文化传承 →
-          </router-link>
+          <router-link to="/culture/heritage" class="view-more"> 查看更多文化传承 → </router-link>
         </div>
       </div>
     </div>
@@ -101,15 +93,15 @@
     <div class="culture-footer">
       <p>吉林大学 - 融汇古今文化，培育时代新人</p>
       <div class="footer-image-container">
-        <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学">
+        <img src="../../assets/imgs/culturehome/campus-life-hero.jpg" alt="吉林大学" />
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
-  name: 'CultureView'
+  name: 'CultureView',
 }
 </script>
 
@@ -154,14 +146,14 @@ export default {
   font-size: 3.5rem;
   margin-bottom: 20px;
   font-weight: 600;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .banner-overlay p {
   font-size: 1.8rem;
   max-width: 800px;
   line-height: 1.5;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* 文化介绍 */
@@ -209,7 +201,7 @@ export default {
   height: 400px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .feature-image img {
@@ -255,7 +247,7 @@ export default {
 }
 
 .feature-list li:before {
-  content: "•";
+  content: '•';
   color: #3498db;
   font-size: 1.5rem;
   position: absolute;
@@ -330,25 +322,25 @@ export default {
   max-width: 1000px;
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* 响应式设计 */
 @media (max-width: 992px) {
-  .feature-section, 
+  .feature-section,
   .feature-section.reverse {
     flex-direction: column;
     gap: 30px;
   }
-  
+
   .feature-image {
     width: 100%;
   }
-  
+
   .banner-overlay h1 {
     font-size: 2.8rem;
   }
-  
+
   .banner-overlay p {
     font-size: 1.4rem;
   }
@@ -358,19 +350,19 @@ export default {
   .culture-banner {
     height: 400px;
   }
-  
+
   .banner-overlay h1 {
     font-size: 2.2rem;
   }
-  
+
   .banner-overlay p {
     font-size: 1.2rem;
   }
-  
+
   .intro-text {
     font-size: 1.2rem;
   }
-  
+
   .culture-footer p {
     font-size: 1.5rem;
   }
@@ -380,19 +372,19 @@ export default {
   .culture-banner {
     height: 300px;
   }
-  
+
   .banner-overlay h1 {
     font-size: 1.8rem;
   }
-  
+
   .feature-content h2 {
     font-size: 1.6rem;
   }
-  
+
   .feature-content p {
     font-size: 1.1rem;
   }
-  
+
   .feature-list li {
     font-size: 1rem;
   }

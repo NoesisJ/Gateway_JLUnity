@@ -143,22 +143,22 @@ const router = createRouter({
       name: 'StudentClubs',
       component: () => import('../views/culture/StudentClubs.vue'),
     },
-     {
+    {
       path: '/map',
       name: 'CampusMap',
       component: () => import('../views/map/CampusMap.vue'),
     },
-     {
+    {
       path: '/map/main',
       name: 'MainCampus',
       component: () => import('../views/map/MainCampus.vue'),
     },
-     {
+    {
       path: '/map/south',
       name: 'SouthCampus',
       component: () => import('../views/map/SouthCampus.vue'),
     },
-     {
+    {
       path: '/map/transportation',
       name: 'Transportation',
       component: () => import('../views/map/Transportation.vue'),

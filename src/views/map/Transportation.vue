@@ -12,10 +12,15 @@
           <div class="transport-icon">🚌</div>
           <div class="transport-info">
             <h3>校际班车</h3>
-            <p>学校提供免费校际班车服务，连接各主要校区。班车时刻表可在各校区公告栏或学校官网查询。</p>
+            <p>
+              学校提供免费校际班车服务，连接各主要校区。班车时刻表可在各校区公告栏或学校官网查询。
+            </p>
             <router-link to="/bus-schedule" class="schedule-link">查看班车时刻表 →</router-link>
           </div>
-          <div class="transport-image" :style="{ backgroundImage: 'url(../src/assets/imgs/map/transport.jpg)' }">
+          <div
+            class="transport-image"
+            :style="{ backgroundImage: 'url(../src/assets/imgs/map/transport.jpg)' }"
+          >
             <!-- 图片作为背景图展示 -->
           </div>
         </div>
@@ -51,7 +56,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: 'TransportationGuide',
   data() {
@@ -59,23 +64,23 @@ export default {
       transportInfo: [
         {
           campus: '中心校区',
-          lines: ['13路：吉大中心校区站', '222路：前进大街站', '315路：吉大北门站']
+          lines: ['13路：吉大中心校区站', '222路：前进大街站', '315路：吉大北门站'],
         },
         {
           campus: '南岭校区',
-          lines: ['6路：吉大南岭校区站', '66路：人民大街站', '306路：南岭体育场站']
+          lines: ['6路：吉大南岭校区站', '66路：人民大街站', '306路：南岭体育场站'],
         },
         {
           campus: '南湖校区',
-          lines: ['20路：南湖广场站', '154路：吉大南湖校区站', '252路：延安大街站']
+          lines: ['20路：南湖广场站', '154路：吉大南湖校区站', '252路：延安大街站'],
         },
         {
           campus: '朝阳校区',
-          lines: ['25路：吉大朝阳校区站', '62路：西民主大街站', '362路：地质宫站']
-        }
-      ]
+          lines: ['25路：吉大朝阳校区站', '62路：西民主大街站', '362路：地质宫站'],
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 
@@ -176,7 +181,9 @@ export default {
   padding: 20px;
   background-color: #ebf8ff;
   border-radius: 8px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .campus-transport:hover {
@@ -226,12 +233,12 @@ export default {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .transport-icon {
     margin-right: 0;
     margin-bottom: 20px;
   }
-  
+
   .transport-image {
     margin-left: 0;
     margin-top: 20px;
@@ -239,7 +246,7 @@ export default {
     max-width: 300px;
     height: 200px;
   }
-  
+
   .campus-transport-list {
     grid-template-columns: 1fr;
   }
